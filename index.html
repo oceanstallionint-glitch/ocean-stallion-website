@@ -29,7 +29,7 @@
   --shadow-md: 0 16px 44px rgba(7, 21, 40, 0.14);
   --radius-sm: 3px;
   --radius-md: 6px;
-  --header-h: 90px;
+  --header-h: 84px;
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -72,13 +72,12 @@ p { margin: 0 0 1em; }
 /* Header */
 .site-header { position: sticky; top: 0; z-index: 900; background: rgba(250, 246, 236, 0.96); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
 .site-header .container { display: flex; align-items: center; justify-content: space-between; min-height: var(--header-h); gap: 24px; }
-.brand { display: flex; align-items: center; gap: 12px; cursor: pointer; }
-.logo-mark { width: 65px; height: 65px; flex: 0 0 auto; }
-
-.brand-text { display: flex; flex-direction: column; line-height: 1.1; justify-content: center; }
-.brand-name { font-family: var(--font-serif); font-weight: 700; font-size: 1.4rem; letter-spacing: 0.02em; color: #0B1F3A; margin-bottom: 2px;}
-.brand-sub { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-500); font-weight: 700; margin-bottom: 4px;}
-.brand-tagline { font-size: 0.68rem; color: #4A5568; font-weight: 500; font-family: var(--font-sans); letter-spacing: 0.02em;}
+.brand { display: flex; align-items: center; gap: 14px; cursor: pointer; }
+.logo-mark { width: 55px; height: 55px; flex: 0 0 auto; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-name { font-family: var(--font-serif); font-weight: 700; font-size: 1.15rem; letter-spacing: 0.06em; color: var(--navy-800); }
+.brand-sub { font-size: 0.62rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-500); font-weight: 600; margin-top: 3px; }
+.brand-tagline { font-size: 0.65rem; color: var(--muted); margin-top: 5px; font-weight: 500; font-family: var(--font-serif); font-style: italic; }
 
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a { position: relative; padding: 10px 11px; font-size: 0.79rem; font-weight: 500; letter-spacing: 0.03em; color: var(--navy-800); border-radius: var(--radius-sm); transition: color 0.25s; cursor: pointer; }
@@ -93,8 +92,6 @@ p { margin: 0 0 1em; }
   .nav { position: fixed; top: var(--header-h); left: 0; right: 0; bottom: auto; flex-direction: column; align-items: stretch; background: var(--ivory-50); border-bottom: 1px solid var(--line); padding: 12px 24px 24px; transform: translateY(-12px); opacity: 0; visibility: hidden; transition: 0.3s; max-height: calc(100vh - var(--header-h)); overflow-y: auto; }
   .nav.open { transform: translateY(0); opacity: 1; visibility: visible; }
   .nav a { padding: 16px 4px; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
-  .brand-name { font-size: 1.15rem; }
-  .brand-tagline { font-size: 0.6rem; }
 }
 @media (min-width: 1100px) { .menu-toggle { display: none; } }
 
@@ -183,7 +180,7 @@ p { margin: 0 0 1em; }
 /* Contact Info List with Icons */
 .contact-info-list { list-style: none; padding: 0; margin: 30px 0 0 0; display: grid; gap: 20px; }
 .contact-info-list li { display: flex; align-items: center; gap: 15px; font-size: 1.05rem; color: var(--white); }
-.contact-info-list svg { width: 24px; height: 24px; color: var(--gold-400); flex-shrink: 0; } /* Gold Icons */
+.contact-info-list svg { width: 24px; height: 24px; color: var(--gold-400); flex-shrink: 0; }
 .contact-info-list a { transition: color 0.3s; font-weight: 500; }
 .contact-info-list a:hover { color: var(--gold-300); text-decoration: underline; }
 
@@ -236,25 +233,29 @@ p { margin: 0 0 1em; }
 <header class="site-header">
   <div class="container">
     <a class="brand" onclick="navigate('home')">
-      <!-- Custom Premium Logo Matching the Image -->
-      <svg class="logo-mark" viewBox="0 0 100 100">
-        <!-- Globe Base -->
-        <circle cx="50" cy="50" r="45" fill="#F8F9FA"/>
-        <path d="M 20 60 A 40 40 0 0 0 80 60 A 40 40 0 0 1 20 60 Z" fill="#0B1F3A"/>
-        <path d="M 10 50 Q 50 80 90 50" fill="none" stroke="#0B1F3A" stroke-width="4"/>
-        <path d="M 30 25 A 30 30 0 0 1 70 25" fill="none" stroke="#0B1F3A" stroke-width="2"/>
-        
-        <!-- Golden Horse -->
-        <path d="M 45 25 C 40 20, 30 25, 25 40 C 20 55, 35 65, 50 60 C 60 55, 65 45, 60 35 C 65 30, 55 20, 45 25 Z" fill="#C6A15B"/>
-        <path d="M 40 30 Q 45 35 50 30" fill="none" stroke="#0B1F3A" stroke-width="1.5"/>
-        <circle cx="42" cy="28" r="1.5" fill="#0B1F3A"/>
-        <!-- Mane & Legs -->
-        <path d="M 30 40 Q 25 35 20 38" fill="none" stroke="#A57D3E" stroke-width="2"/>
-        <path d="M 35 55 L 32 62 M 45 58 L 45 65" stroke="#C6A15B" stroke-width="2"/>
+      <!-- Original Premium Logo -->
+      <svg class="logo-mark" viewBox="0 0 56 56" role="img" aria-label="Ocean Stallion International logo">
+        <circle cx="28" cy="28" r="27" fill="#0B1F3A"/>
+        <circle cx="28" cy="28" r="23" fill="none" stroke="#C6A15B" stroke-width="0.9" opacity="0.75"/>
+        <g stroke="#C6A15B" stroke-width="1.2" stroke-linecap="round" fill="none">
+          <line x1="28" y1="14.5" x2="28" y2="29"/>
+          <path d="M28 17 Q24.5 17 24.5 20.5"/>
+          <path d="M28 20 Q24.5 20 24.5 23.5"/>
+          <path d="M28 23 Q24.5 23 24.5 26.5"/>
+          <path d="M28 17 Q31.5 17 31.5 20.5"/>
+          <path d="M28 20 Q31.5 20 31.5 23.5"/>
+          <path d="M28 23 Q31.5 23 31.5 26.5"/>
+          <path d="M28 14.5 L28 11.5"/>
+        </g>
+        <g stroke="#C6A15B" stroke-width="1.15" stroke-linecap="round" fill="none">
+          <path d="M14.5 34.5 Q17.5 32 20.5 34.5 T 26.5 34.5 T 32.5 34.5 T 38.5 34.5 T 41.5 34.5"/>
+          <path d="M14.5 38.5 Q17.5 36 20.5 38.5 T 26.5 38.5 T 32.5 38.5 T 38.5 38.5 T 41.5 38.5"/>
+          <path d="M16.5 42.5 Q19.5 40 22.5 42.5 T 28.5 42.5 T 34.5 42.5 T 39.5 42.5"/>
+        </g>
       </svg>
       <span class="brand-text">
         <span class="brand-name">OCEAN STALLION</span>
-        <span class="brand-sub">- INTERNATIONAL -</span>
+        <span class="brand-sub">INTERNATIONAL</span>
         <span class="brand-tagline">Bridging Indian Agriculture to the World</span>
       </span>
     </a>
@@ -375,8 +376,9 @@ p { margin: 0 0 1em; }
             </div>
           </article>
 
+          <!-- White Maize (Aapki photo ka local path) -->
           <article class="product-card">
-            <div class="product-media"><img src="https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&w=800&q=80" alt="White Maize"></div>
+            <div class="product-media"><img src="white-maize.jpg" alt="White Maize"></div>
             <div class="product-body">
               <h3>White Maize</h3>
               <p>White maize procured mainly through our farmer network, with moisture and grading agreed against buyer spec.</p>
@@ -391,8 +393,9 @@ p { margin: 0 0 1em; }
             </div>
           </article>
 
+          <!-- Pearl Millet (Aapki photo ka local path) -->
           <article class="product-card">
-            <div class="product-media"><img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80" alt="Bajra"></div>
+            <div class="product-media"><img src="bajra.jpg" alt="Bajra"></div>
             <div class="product-body">
               <h3>Pearl Millet (Bajra)</h3>
               <p>Traditional Indian coarse grain, sourced from farmers and cleaned to buyer specification.</p>
@@ -553,7 +556,6 @@ p { margin: 0 0 1em; }
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.6"/></svg>
-              <!-- Updated Location Link -->
               <a href="https://maps.app.goo.gl/WwqwDWzPfho8j4dj9" target="_blank">Mahisagar, Gujarat 389230</a>
             </li>
           </ul>
@@ -593,21 +595,25 @@ p { margin: 0 0 1em; }
   <div class="container footer-top">
     <div class="footer-brand">
       <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-        <!-- Footer Logo -->
-        <svg class="logo-mark" style="width: 50px; height: 50px;" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="45" fill="#F8F9FA"/>
-          <path d="M 20 60 A 40 40 0 0 0 80 60 A 40 40 0 0 1 20 60 Z" fill="#0B1F3A"/>
-          <path d="M 10 50 Q 50 80 90 50" fill="none" stroke="#0B1F3A" stroke-width="4"/>
-          <path d="M 30 25 A 30 30 0 0 1 70 25" fill="none" stroke="#0B1F3A" stroke-width="2"/>
-          <path d="M 45 25 C 40 20, 30 25, 25 40 C 20 55, 35 65, 50 60 C 60 55, 65 45, 60 35 C 65 30, 55 20, 45 25 Z" fill="#C6A15B"/>
-          <path d="M 40 30 Q 45 35 50 30" fill="none" stroke="#0B1F3A" stroke-width="1.5"/>
-          <circle cx="42" cy="28" r="1.5" fill="#0B1F3A"/>
-          <path d="M 30 40 Q 25 35 20 38" fill="none" stroke="#A57D3E" stroke-width="2"/>
-          <path d="M 35 55 L 32 62 M 45 58 L 45 65" stroke="#C6A15B" stroke-width="2"/>
+        <!-- Original Logo in Footer -->
+        <svg class="logo-mark" style="width: 45px; height: 45px;" viewBox="0 0 56 56">
+          <circle cx="28" cy="28" r="27" fill="#0B1F3A"/>
+          <circle cx="28" cy="28" r="23" fill="none" stroke="#C6A15B" stroke-width="0.9" opacity="0.75"/>
+          <g stroke="#C6A15B" stroke-width="1.2" stroke-linecap="round" fill="none">
+            <line x1="28" y1="14.5" x2="28" y2="29"/>
+            <path d="M28 17 Q24.5 17 24.5 20.5"/><path d="M28 20 Q24.5 20 24.5 23.5"/><path d="M28 23 Q24.5 23 24.5 26.5"/>
+            <path d="M28 17 Q31.5 17 31.5 20.5"/><path d="M28 20 Q31.5 20 31.5 23.5"/><path d="M28 23 Q31.5 23 31.5 26.5"/>
+            <path d="M28 14.5 L28 11.5"/>
+          </g>
+          <g stroke="#C6A15B" stroke-width="1.15" stroke-linecap="round" fill="none">
+            <path d="M14.5 34.5 Q17.5 32 20.5 34.5 T 26.5 34.5 T 32.5 34.5 T 38.5 34.5 T 41.5 34.5"/>
+            <path d="M14.5 38.5 Q17.5 36 20.5 38.5 T 26.5 38.5 T 32.5 38.5 T 38.5 38.5 T 41.5 38.5"/>
+            <path d="M16.5 42.5 Q19.5 40 22.5 42.5 T 28.5 42.5 T 34.5 42.5 T 39.5 42.5"/>
+          </g>
         </svg>
         <div>
           <strong style="color: var(--white); font-size: 1.1rem; font-family: var(--font-serif); display: block; line-height: 1;">OCEAN STALLION</strong>
-          <span style="color: var(--gold-400); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;">- INTERNATIONAL -</span>
+          <span style="color: var(--gold-400); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;">INTERNATIONAL</span>
         </div>
       </div>
       <p>India-based agricultural commodity merchant-export business. Sourcing mainly from farmers for international buyers.</p>
@@ -634,7 +640,6 @@ p { margin: 0 0 1em; }
     <div class="footer-col">
       <h5>Get in touch</h5>
       
-      <!-- Fixed Footer Icons -->
       <ul class="footer-contact">
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
