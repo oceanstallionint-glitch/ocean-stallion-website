@@ -29,7 +29,7 @@
   --shadow-md: 0 16px 44px rgba(7, 21, 40, 0.14);
   --radius-sm: 3px;
   --radius-md: 6px;
-  --header-h: 84px;
+  --header-h: 90px;
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -70,14 +70,15 @@ p { margin: 0 0 1em; }
 .btn-dark:hover { background: var(--navy-700); transform: translateY(-2px); }
 
 /* Header */
-.site-header { position: sticky; top: 0; z-index: 900; background: rgba(250, 246, 236, 0.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.site-header { position: sticky; top: 0; z-index: 900; background: rgba(250, 246, 236, 0.96); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
 .site-header .container { display: flex; align-items: center; justify-content: space-between; min-height: var(--header-h); gap: 24px; }
-.brand { display: flex; align-items: center; gap: 14px; cursor: pointer; }
-.logo-mark { width: 50px; height: 50px; flex: 0 0 auto; }
-.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
-.brand-name { font-family: var(--font-serif); font-weight: 700; font-size: 1.08rem; letter-spacing: 0.06em; color: var(--navy-800); }
-.brand-sub { font-size: 0.62rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-500); font-weight: 600; margin-top: 3px; }
-.brand-tagline { font-size: 0.65rem; color: var(--muted); margin-top: 5px; font-weight: 500; font-family: var(--font-serif); font-style: italic; }
+.brand { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+.logo-mark { width: 65px; height: 65px; flex: 0 0 auto; }
+
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; justify-content: center; }
+.brand-name { font-family: var(--font-serif); font-weight: 700; font-size: 1.4rem; letter-spacing: 0.02em; color: #0B1F3A; margin-bottom: 2px;}
+.brand-sub { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-500); font-weight: 700; margin-bottom: 4px;}
+.brand-tagline { font-size: 0.68rem; color: #4A5568; font-weight: 500; font-family: var(--font-sans); letter-spacing: 0.02em;}
 
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a { position: relative; padding: 10px 11px; font-size: 0.79rem; font-weight: 500; letter-spacing: 0.03em; color: var(--navy-800); border-radius: var(--radius-sm); transition: color 0.25s; cursor: pointer; }
@@ -92,6 +93,8 @@ p { margin: 0 0 1em; }
   .nav { position: fixed; top: var(--header-h); left: 0; right: 0; bottom: auto; flex-direction: column; align-items: stretch; background: var(--ivory-50); border-bottom: 1px solid var(--line); padding: 12px 24px 24px; transform: translateY(-12px); opacity: 0; visibility: hidden; transition: 0.3s; max-height: calc(100vh - var(--header-h)); overflow-y: auto; }
   .nav.open { transform: translateY(0); opacity: 1; visibility: visible; }
   .nav a { padding: 16px 4px; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+  .brand-name { font-size: 1.15rem; }
+  .brand-tagline { font-size: 0.6rem; }
 }
 @media (min-width: 1100px) { .menu-toggle { display: none; } }
 
@@ -163,7 +166,7 @@ p { margin: 0 0 1em; }
 .stat-card .stat-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
 .stat-card .stat-val { font-family: var(--font-serif); font-size: 1.5rem; color: var(--navy-800); font-style: italic; }
 
-/* Contact Form */
+/* Contact Form & Icons */
 .contact-section { background: var(--navy-800); color: var(--white); }
 .contact-grid { display: grid; gap: 48px; }
 @media (min-width: 900px) { .contact-grid { grid-template-columns: 1fr 1.2fr; gap: 80px; } }
@@ -177,10 +180,10 @@ p { margin: 0 0 1em; }
 .field input, .field select, .field textarea { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2); color: var(--white); padding: 12px 14px; border-radius: var(--radius-sm); font-family: inherit; }
 .field select option { background: var(--navy-800); }
 
-/* Contact Info Icons */
+/* Contact Info List with Icons */
 .contact-info-list { list-style: none; padding: 0; margin: 30px 0 0 0; display: grid; gap: 20px; }
 .contact-info-list li { display: flex; align-items: center; gap: 15px; font-size: 1.05rem; color: var(--white); }
-.contact-info-list svg { width: 24px; height: 24px; color: var(--gold-400); flex-shrink: 0; } /* Gold icons */
+.contact-info-list svg { width: 24px; height: 24px; color: var(--gold-400); flex-shrink: 0; } /* Gold Icons */
 .contact-info-list a { transition: color 0.3s; font-weight: 500; }
 .contact-info-list a:hover { color: var(--gold-300); text-decoration: underline; }
 
@@ -190,68 +193,32 @@ p { margin: 0 0 1em; }
 @media (min-width: 760px) { .footer-top { grid-template-columns: 1.4fr 1fr 1fr 1.2fr; } }
 .footer-col h5 { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-400); margin-bottom: 18px; }
 .footer-col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+
+/* Footer Contact List with Icons */
+.footer-contact { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.footer-contact li { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.8); }
+.footer-contact svg { width: 16px; height: 16px; color: var(--gold-400); flex-shrink: 0; }
 .footer-contact a { display: inline-block; transition: all 0.3s ease; color: var(--white); }
 .footer-contact a:hover { color: var(--gold-500); transform: translateX(4px); text-decoration: underline; }
+
 .social-links { display: flex; gap: 12px; align-items: center; }
 .social-links svg { width: 18px; height: 18px; fill: var(--gold-400); transition: fill 0.3s; }
 .social-links a:hover svg { fill: var(--white); }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-block: 22px; font-size: 0.78rem; text-align: center; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 15px;}
 
 /* =========================================================
-   LOADER (Fixed Circle, Photo Moves Inside)
+   LOADER
    ========================================================= */
 .loader { position: fixed; inset: 0; z-index: 9999; background: var(--navy-800); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: 0.8s ease-in-out; }
 .loader.hidden { opacity: 0; visibility: hidden; }
 
-.loader-ship-container { 
-  width: 180px; 
-  height: 180px; 
-  border-radius: 50%; 
-  overflow: hidden; 
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6); 
-  border: 3px solid var(--gold-500); 
-  position: relative;
-}
+.loader-ship-container { width: 180px; height: 180px; border-radius: 50%; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 3px solid var(--gold-500); position: relative; }
+.loader-ship-img { width: 100%; height: 100%; object-fit: cover; animation: panInside 12s infinite alternate ease-in-out; }
+.loader-water-overlay { position: absolute; bottom: 0; left: 0; width: 100%; height: 30%; background: linear-gradient(transparent, rgba(11, 31, 58, 0.5)); z-index: 1; pointer-events: none; }
+.loader-label { font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-400); font-weight: 600; margin-top: 30px; animation: textPulse 1.5s infinite alternate; z-index: 2; }
 
-.loader-ship-img { 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
-  animation: panInside 12s infinite alternate ease-in-out;
-}
-
-.loader-water-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30%;
-  background: linear-gradient(transparent, rgba(11, 31, 58, 0.5));
-  z-index: 1;
-  pointer-events: none;
-}
-
-.loader-label { 
-  font-family: var(--font-sans); 
-  font-size: 0.85rem; 
-  letter-spacing: 0.4em; 
-  text-transform: uppercase; 
-  color: var(--gold-400); 
-  font-weight: 600; 
-  margin-top: 30px; 
-  animation: textPulse 1.5s infinite alternate;
-  z-index: 2;
-}
-
-@keyframes panInside {
-  0% { transform: scale(1.05) translate(0, 0); }
-  100% { transform: scale(1.15) translate(-4%, -2%); }
-}
-
-@keyframes textPulse {
-  0% { opacity: 0.4; }
-  100% { opacity: 1; }
-}
+@keyframes panInside { 0% { transform: scale(1.05) translate(0, 0); } 100% { transform: scale(1.15) translate(-4%, -2%); } }
+@keyframes textPulse { 0% { opacity: 0.4; } 100% { opacity: 1; } }
 </style>
 </head>
 <body>
@@ -269,34 +236,25 @@ p { margin: 0 0 1em; }
 <header class="site-header">
   <div class="container">
     <a class="brand" onclick="navigate('home')">
-      <!-- New Premium Logo: Majestic Horse Head with Golden accents -->
+      <!-- Custom Premium Logo Matching the Image -->
       <svg class="logo-mark" viewBox="0 0 100 100">
-        <defs>
-          <linearGradient id="goldGradient" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#E6D3A8" />
-            <stop offset="50%" stop-color="#C6A15B" />
-            <stop offset="100%" stop-color="#A57D3E" />
-          </linearGradient>
-        </defs>
-        <!-- Navy Circle Background -->
-        <circle cx="50" cy="50" r="48" fill="#0B1F3A"/>
-        <!-- Gold Outer Ring -->
-        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#goldGradient)" stroke-width="2"/>
+        <!-- Globe Base -->
+        <circle cx="50" cy="50" r="45" fill="#F8F9FA"/>
+        <path d="M 20 60 A 40 40 0 0 0 80 60 A 40 40 0 0 1 20 60 Z" fill="#0B1F3A"/>
+        <path d="M 10 50 Q 50 80 90 50" fill="none" stroke="#0B1F3A" stroke-width="4"/>
+        <path d="M 30 25 A 30 30 0 0 1 70 25" fill="none" stroke="#0B1F3A" stroke-width="2"/>
         
-        <!-- Elegant Horse Head Silhouette -->
-        <path d="M 60 25 C 55 20, 45 20, 40 30 C 35 40, 40 45, 45 50 C 40 55, 35 65, 40 75 C 45 85, 55 85, 60 80 C 65 75, 70 70, 70 65 C 75 65, 80 60, 80 55 C 80 50, 75 45, 70 45 C 68 45, 65 46, 63 47 C 65 40, 65 30, 60 25 Z" fill="url(#goldGradient)" opacity="0.9"/>
-        
-        <!-- Stylized Mane and Eye details -->
-        <path d="M 55 35 Q 50 40 53 45" fill="none" stroke="#0B1F3A" stroke-width="1.5"/>
-        <circle cx="58" cy="38" r="1.5" fill="#0B1F3A"/>
-        
-        <!-- Wheat Stalk Base -->
-        <path d="M 30 80 Q 35 70 40 75" fill="none" stroke="url(#goldGradient)" stroke-width="2"/>
-        <path d="M 25 75 Q 30 65 35 70" fill="none" stroke="url(#goldGradient)" stroke-width="2"/>
+        <!-- Golden Horse -->
+        <path d="M 45 25 C 40 20, 30 25, 25 40 C 20 55, 35 65, 50 60 C 60 55, 65 45, 60 35 C 65 30, 55 20, 45 25 Z" fill="#C6A15B"/>
+        <path d="M 40 30 Q 45 35 50 30" fill="none" stroke="#0B1F3A" stroke-width="1.5"/>
+        <circle cx="42" cy="28" r="1.5" fill="#0B1F3A"/>
+        <!-- Mane & Legs -->
+        <path d="M 30 40 Q 25 35 20 38" fill="none" stroke="#A57D3E" stroke-width="2"/>
+        <path d="M 35 55 L 32 62 M 45 58 L 45 65" stroke="#C6A15B" stroke-width="2"/>
       </svg>
       <span class="brand-text">
         <span class="brand-name">OCEAN STALLION</span>
-        <span class="brand-sub">INTERNATIONAL</span>
+        <span class="brand-sub">- INTERNATIONAL -</span>
         <span class="brand-tagline">Bridging Indian Agriculture to the World</span>
       </span>
     </a>
@@ -319,7 +277,6 @@ p { margin: 0 0 1em; }
   <div id="page-home" class="page-section active">
     <section class="hero">
       <div class="hero-slides">
-        <!-- 5 Highly Reliable Ship/Ocean Images -->
         <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=80');"></div>
         <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1920&q=80');"></div>
         <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1586528116311-ad8ed745d44c?auto=format&fit=crop&w=1920&q=80');"></div>
@@ -418,7 +375,6 @@ p { margin: 0 0 1em; }
             </div>
           </article>
 
-          <!-- White Maize Image Updated -->
           <article class="product-card">
             <div class="product-media"><img src="https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&w=800&q=80" alt="White Maize"></div>
             <div class="product-body">
@@ -435,7 +391,6 @@ p { margin: 0 0 1em; }
             </div>
           </article>
 
-          <!-- Pearl Millet Image Updated -->
           <article class="product-card">
             <div class="product-media"><img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80" alt="Bajra"></div>
             <div class="product-body">
@@ -587,7 +542,6 @@ p { margin: 0 0 1em; }
           <h2 style="color: var(--white);">Let's discuss your requirement.</h2>
           <p style="color: rgba(255,255,255,0.8);">Share the commodity, specification and destination, and we will respond with what we can realistically offer.</p>
           
-          <!-- Contact Info with Visible Gold Icons -->
           <ul class="contact-info-list">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
@@ -599,7 +553,8 @@ p { margin: 0 0 1em; }
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.6"/></svg>
-              <a href="https://www.google.com/maps/search/?api=1&query=Mahisagar,Gujarat,389230" target="_blank">Mahisagar, Gujarat 389230</a>
+              <!-- Updated Location Link -->
+              <a href="https://maps.app.goo.gl/WwqwDWzPfho8j4dj9" target="_blank">Mahisagar, Gujarat 389230</a>
             </li>
           </ul>
         </div>
@@ -638,19 +593,21 @@ p { margin: 0 0 1em; }
   <div class="container footer-top">
     <div class="footer-brand">
       <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-        <!-- Logo in footer (Same Premium Logo) -->
-        <svg class="logo-mark" style="width: 45px; height: 45px;" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="48" fill="#0B1F3A"/>
-          <circle cx="50" cy="50" r="45" fill="none" stroke="#C6A15B" stroke-width="2"/>
-          <path d="M 60 25 C 55 20, 45 20, 40 30 C 35 40, 40 45, 45 50 C 40 55, 35 65, 40 75 C 45 85, 55 85, 60 80 C 65 75, 70 70, 70 65 C 75 65, 80 60, 80 55 C 80 50, 75 45, 70 45 C 68 45, 65 46, 63 47 C 65 40, 65 30, 60 25 Z" fill="#C6A15B" opacity="0.9"/>
-          <path d="M 55 35 Q 50 40 53 45" fill="none" stroke="#0B1F3A" stroke-width="1.5"/>
-          <circle cx="58" cy="38" r="1.5" fill="#0B1F3A"/>
-          <path d="M 30 80 Q 35 70 40 75" fill="none" stroke="#C6A15B" stroke-width="2"/>
-          <path d="M 25 75 Q 30 65 35 70" fill="none" stroke="#C6A15B" stroke-width="2"/>
+        <!-- Footer Logo -->
+        <svg class="logo-mark" style="width: 50px; height: 50px;" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" fill="#F8F9FA"/>
+          <path d="M 20 60 A 40 40 0 0 0 80 60 A 40 40 0 0 1 20 60 Z" fill="#0B1F3A"/>
+          <path d="M 10 50 Q 50 80 90 50" fill="none" stroke="#0B1F3A" stroke-width="4"/>
+          <path d="M 30 25 A 30 30 0 0 1 70 25" fill="none" stroke="#0B1F3A" stroke-width="2"/>
+          <path d="M 45 25 C 40 20, 30 25, 25 40 C 20 55, 35 65, 50 60 C 60 55, 65 45, 60 35 C 65 30, 55 20, 45 25 Z" fill="#C6A15B"/>
+          <path d="M 40 30 Q 45 35 50 30" fill="none" stroke="#0B1F3A" stroke-width="1.5"/>
+          <circle cx="42" cy="28" r="1.5" fill="#0B1F3A"/>
+          <path d="M 30 40 Q 25 35 20 38" fill="none" stroke="#A57D3E" stroke-width="2"/>
+          <path d="M 35 55 L 32 62 M 45 58 L 45 65" stroke="#C6A15B" stroke-width="2"/>
         </svg>
         <div>
           <strong style="color: var(--white); font-size: 1.1rem; font-family: var(--font-serif); display: block; line-height: 1;">OCEAN STALLION</strong>
-          <span style="color: var(--gold-400); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;">INTERNATIONAL</span>
+          <span style="color: var(--gold-400); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;">- INTERNATIONAL -</span>
         </div>
       </div>
       <p>India-based agricultural commodity merchant-export business. Sourcing mainly from farmers for international buyers.</p>
@@ -676,11 +633,25 @@ p { margin: 0 0 1em; }
     
     <div class="footer-col">
       <h5>Get in touch</h5>
+      
+      <!-- Fixed Footer Icons -->
       <ul class="footer-contact">
-        <li><a href="mailto:oceanstallionint@gmail.com">oceanstallionint@gmail.com</a></li>
-        <li><a href="tel:+919638808767">+91 96388 08767</a></li>
-        <li><a href="https://www.google.com/maps/search/?api=1&query=Mahisagar,Gujarat,389230" target="_blank">Mahisagar, Gujarat 389230</a></li>
-        <li>India</li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <a href="mailto:oceanstallionint@gmail.com">oceanstallionint@gmail.com</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
+          <a href="tel:+919638808767">+91 96388 08767</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <a href="https://maps.app.goo.gl/WwqwDWzPfho8j4dj9" target="_blank">Mahisagar, Gujarat 389230</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>India</span>
+        </li>
       </ul>
       
       <div class="social-links" style="margin-top: 20px;">
