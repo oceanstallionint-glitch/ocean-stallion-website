@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ocean Stallion International — Agricultural Commodity Export</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   DESIGN SYSTEM & ALL CSS
+   ========================================================= */
+:root {
+  --navy-900: #071528;
+  --navy-800: #0B1F3A;
+  --navy-700: #12294A;
+  --gold-500: #C6A15B;
+  --gold-400: #D8BC82;
+  --gold-300: #E6D3A8;
+  --ivory-50: #FAF6EC;
+  --ivory-100: #F3ECDC;
+  --white: #FFFFFF;
+  --ink: #1B2432;
+  --muted: #5C6B7A;
+  --line: rgba(11, 31, 58, 0.12);
+  --line-strong: rgba(11, 31, 58, 0.22);
+  --shadow-sm: 0 4px 16px rgba(7, 21, 40, 0.08);
+  --shadow-md: 0 16px 44px rgba(7, 21, 40, 0.14);
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --header-h: 84px;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 12px); }
+body {
+  margin: 0; font-family: var(--font-sans); color: var(--ink);
+  background: var(--ivory-50); font-size: 16px; line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+
+h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 1.18; color: var(--navy-800); margin: 0 0 0.5em; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); }
+h3 { font-size: 1.25rem; }
+p { margin: 0 0 1em; }
+
+.container { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: 24px; }
+.eyebrow { display: inline-block; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-500); font-weight: 600; margin-bottom: 14px; }
+.rule { width: 52px; height: 2px; background: var(--gold-500); margin: 0 0 22px; border: 0; }
+.section { padding: clamp(64px, 9vw, 112px) 0; }
+.section-head { max-width: 720px; margin-bottom: 56px; }
+.section-head p { color: var(--muted); font-size: 1.02rem; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 30px; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; border-radius: var(--radius-sm); border: 1px solid transparent; transition: all 0.35s var(--ease); white-space: nowrap; }
+.btn-primary { background: var(--gold-500); color: var(--navy-900); }
+.btn-primary:hover { background: var(--gold-400); transform: translateY(-2px); }
+.btn-outline { border-color: rgba(255,255,255,0.55); color: var(--white); }
+.btn-outline:hover { background: var(--white); color: var(--navy-900); }
+.btn-dark { background: var(--navy-800); color: var(--white); }
+.btn-dark:hover { background: var(--navy-700); transform: translateY(-2px); }
+
+/* Header */
+.site-header { position: sticky; top: 0; z-index: 900; background: rgba(250, 246, 236, 0.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.site-header .container { display: flex; align-items: center; justify-content: space-between; min-height: var(--header-h); gap: 24px; }
+.brand { display: flex; align-items: center; gap: 14px; cursor: pointer; }
+.logo-mark { width: 50px; height: 50px; flex: 0 0 auto; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-name { font-family: var(--font-serif); font-weight: 700; font-size: 1.08rem; letter-spacing: 0.06em; color: var(--navy-800); }
+.brand-sub { font-size: 0.62rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-500); font-weight: 600; margin-top: 3px; }
+
+.nav { display: flex; align-items: center; gap: 4px; }
+.nav a { position: relative; padding: 10px 11px; font-size: 0.79rem; font-weight: 500; letter-spacing: 0.03em; color: var(--navy-800); border-radius: var(--radius-sm); transition: color 0.25s; cursor: pointer; }
+.nav a:hover, .nav a.active { color: var(--gold-500); }
+.header-cta { display: none; }
+@media (min-width: 1100px) { .header-cta { display: inline-flex; padding: 12px 22px; font-size: 0.74rem; } }
+.menu-toggle { display: inline-flex; flex-direction: column; justify-content: center; width: 44px; height: 44px; gap: 5px; background: transparent; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); align-items: center; }
+.menu-toggle span { display: block; width: 20px; height: 1.6px; background: var(--navy-800); transition: 0.3s; }
+
+/* Mobile Menu */
+@media (max-width: 1099px) {
+  .nav { position: fixed; top: var(--header-h); left: 0; right: 0; bottom: auto; flex-direction: column; align-items: stretch; background: var(--ivory-50); border-bottom: 1px solid var(--line); padding: 12px 24px 24px; transform: translateY(-12px); opacity: 0; visibility: hidden; transition: 0.3s; max-height: calc(100vh - var(--header-h)); overflow-y: auto; }
+  .nav.open { transform: translateY(0); opacity: 1; visibility: visible; }
+  .nav a { padding: 16px 4px; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+}
+@media (min-width: 1100px) { .menu-toggle { display: none; } }
+
+/* Page Transitions */
+.page-section { display: none; }
+.page-section.active { display: block; animation: fadeIn 0.4s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* HERO */
+.hero { position: relative; min-height: clamp(560px, 88vh, 820px); display: flex; align-items: center; overflow: hidden; background: var(--navy-900); color: var(--white); }
+.hero-slides { position: absolute; inset: 0; z-index: 0; }
+.hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.4s ease; }
+.hero-slide.active { opacity: 1; }
+.hero-slide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,21,40,0.55) 0%, rgba(7,21,40,0.65) 45%, rgba(7,21,40,0.82) 100%), linear-gradient(90deg, rgba(7,21,40,0.7) 0%, rgba(7,21,40,0.15) 60%); }
+.hero-inner { position: relative; z-index: 2; padding-block: clamp(80px, 12vh, 140px); max-width: 760px; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-400); font-weight: 600; margin-bottom: 26px; }
+.hero-eyebrow::before { content: ""; width: 36px; height: 1px; background: var(--gold-500); }
+.hero h1 { color: var(--white); margin-bottom: 22px; font-weight: 500; }
+.hero h1 em { font-style: italic; color: var(--gold-400); }
+.hero-lead { font-size: clamp(1rem, 1.35vw, 1.12rem); color: rgba(255,255,255,0.82); max-width: 640px; margin-bottom: 38px; line-height: 1.7; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
+
+/* Grids & Sections */
+.intro-grid { display: grid; gap: 48px; align-items: center; }
+@media (min-width: 900px) { .intro-grid { grid-template-columns: 1.05fr 1fr; gap: 80px; } }
+.intro p { color: var(--muted); font-size: 1.02rem; }
+.intro p.lead { color: var(--ink); font-size: 1.12rem; }
+.intro-figure { aspect-ratio: 4 / 3.4; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); position: relative; }
+.intro-figure img { width: 100%; height: 100%; object-fit: cover; }
+.intro-figure figcaption { position: absolute; left: 16px; bottom: 16px; right: 16px; background: rgba(7,21,40,0.78); color: rgba(255,255,255,0.86); font-size: 0.72rem; padding: 10px 14px; border-radius: var(--radius-sm); }
+
+/* Why Choose Us */
+.why-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); margin-top: 40px; }
+.why-card { background: var(--white); border: 1px solid var(--line); border-left: 3px solid var(--gold-500); border-radius: var(--radius-md); padding: 28px; transition: 0.3s; }
+.why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+.why-card h4 { font-size: 1.1rem; margin-bottom: 8px; }
+.why-card p { font-size: 0.9rem; color: var(--muted); margin: 0; }
+
+/* Testimonials */
+.testimonial-section { background: var(--navy-800); color: var(--white); text-align: center; }
+.testimonial-slider { max-width: 800px; margin: 0 auto; position: relative; padding: 40px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-md); }
+.testimonial-text { font-family: var(--font-serif); font-size: 1.4rem; font-style: italic; color: var(--gold-300); margin-bottom: 20px; }
+.testimonial-author { font-size: 0.9rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* Products */
+.product-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.product-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; transition: 0.4s; }
+.product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--gold-300); }
+.product-media { aspect-ratio: 4 / 3; overflow: hidden; position: relative; background: var(--ivory-100); }
+.product-media img { width: 100%; height: 100%; object-fit: cover; }
+.product-body { padding: 18px; display: flex; flex-direction: column; flex: 1; }
+.product-body p { color: var(--muted); font-size: 0.88rem; flex: 1; }
+
+/* Certificates */
+.cert-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.cert-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 26px 24px; display: flex; flex-direction: column; }
+.cert-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--ivory-50); border: 1px solid var(--gold-300); color: var(--gold-500); display: grid; place-items: center; margin-bottom: 18px; font-size: 1.2rem; }
+.cert-status { display: inline-flex; align-items: center; gap: 8px; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; padding: 7px 14px; border-radius: 999px; align-self: flex-start; }
+.cert-status.progress { background: rgba(198, 161, 91, 0.12); color: var(--gold-500); border: 1px solid var(--gold-300); }
+.cert-status.planned { background: var(--ivory-50); color: var(--muted); border: 1px dashed var(--line-strong); }
+
+/* Gallery */
+.gallery-grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.gallery-tile { aspect-ratio: 4 / 3; background: var(--white); border: 1px dashed var(--line-strong); border-radius: var(--radius-md); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; }
+
+/* Trade Stats */
+.stat-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.stat-card { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--gold-500); border-radius: var(--radius-md); padding: 28px 24px; text-align: center; }
+.stat-card .stat-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.stat-card .stat-val { font-family: var(--font-serif); font-size: 1.5rem; color: var(--navy-800); font-style: italic; }
+
+/* Contact Form */
+.contact-section { background: var(--navy-800); color: var(--white); }
+.contact-grid { display: grid; gap: 48px; }
+@media (min-width: 900px) { .contact-grid { grid-template-columns: 1fr 1.2fr; gap: 80px; } }
+
+.quote-form { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .quote-form { grid-template-columns: 1fr 1fr; } }
+
+.quote-form .full { grid-column: 1 / -1; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-400); font-weight: 600; }
+.field input, .field select, .field textarea { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2); color: var(--white); padding: 12px 14px; border-radius: var(--radius-sm); font-family: inherit; }
+.field select option { background: var(--navy-800); }
+
+/* Footer & Get in Touch */
+.site-footer { background: var(--navy-900); color: rgba(255,255,255,0.62); font-size: 0.86rem; padding-top: 48px; }
+.footer-top { display: grid; gap: 40px; padding-bottom: 32px; }
+@media (min-width: 760px) { .footer-top { grid-template-columns: 1.4fr 1fr 1fr 1.2fr; } }
+.footer-col h5 { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-400); margin-bottom: 18px; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.footer-contact a { display: inline-block; transition: all 0.3s ease; color: var(--white); }
+.footer-contact a:hover { color: var(--gold-500); transform: translateX(4px); text-decoration: underline; }
+.social-links { display: flex; gap: 12px; align-items: center; }
+.social-links svg { width: 18px; height: 18px; fill: var(--gold-400); transition: fill 0.3s; }
+.social-links a:hover svg { fill: var(--white); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-block: 22px; font-size: 0.78rem; text-align: center; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;}
+
+/* =========================================================
+   LOADER (Fixed Circle, Photo Moves Inside)
+   ========================================================= */
+.loader { position: fixed; inset: 0; z-index: 9999; background: var(--navy-800); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: 0.8s ease-in-out; }
+.loader.hidden { opacity: 0; visibility: hidden; }
+
+.loader-ship-container { 
+  width: 180px; 
+  height: 180px; 
+  border-radius: 50%; 
+  overflow: hidden; 
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6); 
+  border: 3px solid var(--gold-500); 
+  position: relative;
+}
+
+.loader-ship-img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  animation: panInside 12s infinite alternate ease-in-out;
+}
+
+.loader-water-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(transparent, rgba(11, 31, 58, 0.5));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.loader-label { 
+  font-family: var(--font-sans); 
+  font-size: 0.85rem; 
+  letter-spacing: 0.4em; 
+  text-transform: uppercase; 
+  color: var(--gold-400); 
+  font-weight: 600; 
+  margin-top: 30px; 
+  animation: textPulse 1.5s infinite alternate;
+  z-index: 2;
+}
+
+@keyframes panInside {
+  0% { transform: scale(1.05) translate(0, 0); }
+  100% { transform: scale(1.15) translate(-4%, -2%); }
+}
+
+@keyframes textPulse {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-ship-container">
+    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80" class="loader-ship-img" alt="Cargo Ship Sailing">
+    <div class="loader-water-overlay"></div>
+  </div>
+  <div class="loader-label">Ocean Stallion</div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" onclick="navigate('home')">
+      <svg class="logo-mark" viewBox="0 0 56 56">
+        <circle cx="28" cy="28" r="27" fill="#0B1F3A"/>
+        <circle cx="28" cy="28" r="23" fill="none" stroke="#C6A15B" stroke-width="0.9" opacity="0.75"/>
+        <g stroke="#C6A15B" stroke-width="1.2" stroke-linecap="round" fill="none">
+          <line x1="28" y1="14.5" x2="28" y2="29"/>
+          <path d="M28 17 Q24.5 17 24.5 20.5"/><path d="M28 20 Q24.5 20 24.5 23.5"/><path d="M28 23 Q24.5 23 24.5 26.5"/>
+          <path d="M28 17 Q31.5 17 31.5 20.5"/><path d="M28 20 Q31.5 20 31.5 23.5"/><path d="M28 23 Q31.5 23 31.5 26.5"/>
+          <path d="M28 14.5 L28 11.5"/>
+        </g>
+        <g stroke="#C6A15B" stroke-width="1.15" stroke-linecap="round" fill="none">
+          <path d="M14.5 34.5 Q17.5 32 20.5 34.5 T 26.5 34.5 T 32.5 34.5 T 38.5 34.5 T 41.5 34.5"/>
+          <path d="M14.5 38.5 Q17.5 36 20.5 38.5 T 26.5 38.5 T 32.5 38.5 T 38.5 38.5 T 41.5 38.5"/>
+        </g>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">OCEAN STALLION</span>
+        <span class="brand-sub">International</span>
+      </span>
+    </a>
+    <nav class="nav" id="navMenu">
+      <a onclick="navigate('home')" id="nav-home" class="active">Home</a>
+      <a onclick="navigate('products')" id="nav-products">Products</a>
+      <a onclick="navigate('certificates')" id="nav-certificates">Certificates</a>
+      <a onclick="navigate('gallery')" id="nav-gallery">Gallery</a>
+      <a onclick="navigate('trade')" id="nav-trade">Trade Progress</a>
+      <a onclick="navigate('contact')" id="nav-contact">Contact</a>
+    </nav>
+    <a onclick="navigate('contact')" class="btn btn-dark header-cta">Request a Quote</a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- ==================== HOME PAGE ==================== -->
+  <div id="page-home" class="page-section active">
+    <section class="hero">
+      <div class="hero-slides">
+        <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=80');"></div>
+      </div>
+      <div class="container">
+        <div class="hero-inner">
+          <span class="hero-eyebrow">Mahisagar, Gujarat · India</span>
+          <h1>Connecting Indian Agriculture<br><em>to Global Markets</em></h1>
+          <p class="hero-lead">
+            We aim to source yellow maize, white maize, wheat, pearl millet and groundnut — primarily directly from farmers — and align quality checks to each buyer's requirement.
+          </p>
+          <div class="hero-actions">
+            <a onclick="navigate('products')" class="btn btn-primary">Explore Products →</a>
+            <a onclick="navigate('contact')" class="btn btn-outline">Request a Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section intro">
+      <div class="container intro-grid">
+        <div>
+          <span class="eyebrow">About the Company</span><hr class="rule" />
+          <h2>A new merchant-exporter built around the farm.</h2>
+          <p class="lead">OCEAN STALLION INTERNATIONAL is an India-based agricultural commodity merchant-export business being established to connect Indian agricultural sourcing with international buyers.</p>
+          <p>Our approach is straightforward: we aim to source commodities like maize, wheat, pearl millet, and groundnut directly from farmers and trusted suppliers. Before confirming any supply, we focus on clearly understanding the buyer's specific requirements.</p>
+          <p>We coordinate product specifications, grading, packaging, and quality checks as applicable. Where direct farmer sourcing is not practical, we buy from trusted local traders (vapari) as a secondary channel. We believe in communicating clearly about availability, quantity, shipment requirements, and documentation, ensuring transparent commercial terms.</p>
+        </div>
+        <figure class="intro-figure">
+          <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1000&q=80" alt="Farmer">
+          <figcaption>Representative photograph</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--white);">
+      <div class="container">
+        <span class="eyebrow">Why Choose Us</span><hr class="rule" />
+        <h2>Building relationships on trust and clarity.</h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <h4>Farmer-Focused Sourcing</h4>
+            <p>An approach centred on sourcing agricultural commodities directly from farmers and trusted suppliers to reduce intermediaries.</p>
+          </div>
+          <div class="why-card">
+            <h4>Quality-Conscious Procurement</h4>
+            <p>Product selection and quality checks aligned with agreed buyer specifications before dispatch.</p>
+          </div>
+          <div class="why-card">
+            <h4>Buyer-Specific Requirements</h4>
+            <p>Product grades, quantities and packaging discussed according to your specific needs and destination requirements.</p>
+          </div>
+          <div class="why-card">
+            <h4>Transparent Communication</h4>
+            <p>Clear discussions about availability, specifications, timelines and commercial terms from the start.</p>
+          </div>
+          <div class="why-card">
+            <h4>Export Coordination</h4>
+            <p>Assistance with applicable documentation and shipment coordination, as agreed upon in the contract.</p>
+          </div>
+          <div class="why-card">
+            <h4>Long-Term Business Relationships</h4>
+            <p>A commitment to professional communication and reliable business practices for sustainable growth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonial-section">
+      <div class="container">
+        <span class="eyebrow" style="color: var(--gold-400);">Testimonials</span><hr class="rule" style="margin: 0 auto 22px;" />
+        <h2 style="color: var(--white);">What our partners say.</h2>
+        <div class="testimonial-slider">
+          <p class="testimonial-text">"Customer feedback will appear here as verified testimonials become available."</p>
+          <p class="testimonial-author">— OCEAN STALLION INTERNATIONAL</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== PRODUCTS PAGE ==================== -->
+  <div id="page-products" class="page-section">
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Our Commodities</span><hr class="rule" />
+        <h2>Five core commodities. One sourcing discipline.</h2>
+        <div class="product-grid" style="margin-top: 40px;">
+          
+          <article class="product-card">
+            <div class="product-media"><img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=800&q=80" alt="Yellow Maize"></div>
+            <div class="product-body">
+              <h3>Yellow Maize</h3>
+              <p>Sourced mainly from our farmer network. Moisture, foreign matter and grading agreed per buyer specification.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media"><img src="https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&w=800&q=80" alt="White Maize"></div>
+            <div class="product-body">
+              <h3>White Maize</h3>
+              <p>White maize procured mainly through our farmer network, with moisture and grading agreed against buyer spec.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=800&q=80" alt="Wheat"></div>
+            <div class="product-body">
+              <h3>Wheat</h3>
+              <p>Milling and feed grade wheat, with quality parameters agreed with the buyer and verified before dispatch.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media"><img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80" alt="Bajra"></div>
+            <div class="product-body">
+              <h3>Pearl Millet (Bajra)</h3>
+              <p>Traditional Indian coarse grain, sourced from farmers and cleaned to buyer specification.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media"><img src="https://images.unsplash.com/photo-1567892737950-30c4db37cd89?auto=format&fit=crop&w=800&q=80" alt="Groundnut"></div>
+            <div class="product-body">
+              <h3>Groundnut</h3>
+              <p>Bold and Java varieties, subject to availability, with oil content discussed against the buyer's requirement.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="Other Grains"></div>
+            <div class="product-body">
+              <h3>Other Grains & Pulses</h3>
+              <p>We also facilitate the sourcing of other agricultural commodities based on specific buyer requirements and seasonal availability.</p>
+              <a onclick="navigate('contact')" class="btn btn-outline" style="margin-top:15px; font-size: 0.7rem; padding: 8px 15px; border-color:var(--navy-800); color:var(--navy-800);">Enquire Now</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== CERTIFICATES PAGE ==================== -->
+  <div id="page-certificates" class="page-section">
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Certificates & Compliance</span><hr class="rule" />
+        <h2>Certifications we are working toward.</h2>
+        <p style="color:var(--muted); margin-bottom: 40px;">We are a new exporter. We will never claim a certificate we have not obtained.</p>
+        
+        <div class="cert-grid">
+          <div class="cert-card">
+            <div class="cert-icon">📄</div>
+            <h3>Import Export Code (IEC)</h3>
+            <p style="font-size:0.9rem; color:var(--muted); flex:1;">Mandatory code required for any import or export from India.</p>
+            <span class="cert-status progress">Application in progress</span>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon">🛡️</div>
+            <h3>APEDA Registration</h3>
+            <p style="font-size:0.9rem; color:var(--muted); flex:1;">Required for scheduled agricultural products like maize and wheat.</p>
+            <span class="cert-status progress">Application in progress</span>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon">✅</div>
+            <h3>FSSAI License</h3>
+            <p style="font-size:0.9rem; color:var(--muted); flex:1;">Food safety registration required for food-grade commodities.</p>
+            <span class="cert-status progress">Application in progress</span>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon">🌾</div>
+            <h3>Phytosanitary Certificate</h3>
+            <p style="font-size:0.9rem; color:var(--muted); flex:1;">Issued per shipment confirming the consignment is pest-free.</p>
+            <span class="cert-status planned">Applied per shipment</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== GALLERY PAGE ==================== -->
+  <div id="page-gallery" class="page-section">
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Gallery</span><hr class="rule" />
+        <h2>Photo & Video Gallery</h2>
+        <p style="color:var(--muted); margin-bottom: 40px;">Genuine photographs will be published here as operations progress. No stock imagery is presented as our own.</p>
+        
+        <div class="gallery-grid">
+          <div class="gallery-tile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:30px; margin-bottom:12px; color:var(--gold-500);"><path d="M12 22V10"/><path d="M12 10C9 10 7 8 7 5c3 0 5 2 5 5Z"/></svg>
+            <strong>Farm & Field</strong>
+            <span style="font-size:0.8rem; color:var(--gold-500); margin-top:8px;">Coming Soon</span>
+          </div>
+          <div class="gallery-tile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:30px; margin-bottom:12px; color:var(--gold-500);"><path d="M3 7l9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
+            <strong>Packaging</strong>
+            <span style="font-size:0.8rem; color:var(--gold-500); margin-top:8px;">Coming Soon</span>
+          </div>
+          <div class="gallery-tile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:30px; margin-bottom:12px; color:var(--gold-500);"><path d="M3 15l4-8h10l4 8"/><path d="M3 15h18v3H3z"/></svg>
+            <strong>Port Operations</strong>
+            <span style="font-size:0.8rem; color:var(--gold-500); margin-top:8px;">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== TRADE PROGRESS PAGE ==================== -->
+  <div id="page-trade" class="page-section">
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Trade Progress</span><hr class="rule" />
+        <h2>Verified aggregate data — nothing else.</h2>
+        <p style="color:var(--muted); margin-bottom: 40px;">We only show aggregate figures that we can substantiate through shipment documents. Buyer identities are never published.</p>
+        
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-label">Completed Export Shipments</div>
+            <div class="stat-val">Not yet available</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total Quantity Exported (MT)</div>
+            <div class="stat-val">Not yet available</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total Quantity Traded/Procured (MT)</div>
+            <div class="stat-val">Not yet available</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Products Supplied</div>
+            <div class="stat-val">Not yet available</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Reporting Period</div>
+            <div class="stat-val">Not yet available</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 40px; background: var(--white); border: 1px solid var(--line); padding: 30px; border-radius: var(--radius-md);">
+          <h3>Product-wise Quantities</h3>
+          <ul style="list-style: none; padding: 0; display: grid; gap: 15px; margin-top: 20px;">
+            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:10px;"><span>Yellow Maize</span> <strong>Not yet available</strong></li>
+            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:10px;"><span>White Maize</span> <strong>Not yet available</strong></li>
+            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:10px;"><span>Wheat</span> <strong>Not yet available</strong></li>
+            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:10px;"><span>Pearl Millet (Bajra)</span> <strong>Not yet available</strong></li>
+            <li style="display:flex; justify-content:space-between;"><span>Groundnut</span> <strong>Not yet available</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== CONTACT PAGE ==================== -->
+  <div id="page-contact" class="page-section">
+    <section class="section contact-section">
+      <div class="container contact-grid">
+        <div>
+          <span class="eyebrow">Contact</span><hr class="rule" />
+          <h2 style="color: var(--white);">Let's discuss your requirement.</h2>
+          <p style="color: rgba(255,255,255,0.8);">Share the commodity, specification and destination, and we will respond with what we can realistically offer.</p>
+          
+          <div style="margin-top: 30px; color: var(--gold-300); line-height: 2.2; font-size: 1.05rem; word-break: break-word;">
+            <a href="mailto:oceanstallionint@gmail.com" style="display:flex; align-items:center; gap:10px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:20px; flex-shrink:0;"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> oceanstallionint@gmail.com</a>
+            <a href="tel:+919638808767" style="display:flex; align-items:center; gap:10px; margin-top:10px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:20px; flex-shrink:0;"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg> +91 96388 08767</a>
+            <span style="display:flex; align-items:center; gap:10px; margin-top:10px; color:var(--white);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:20px; flex-shrink:0; color:var(--gold-300);"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.6"/></svg> Mahisagar, Gujarat 389230</span>
+          </div>
+        </div>
+        
+        <div>
+          <form class="quote-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="event.preventDefault(); alert('Demo Form: Backend connect hone ke baad ye email send karega!');">
+            <p style="display: none;">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+
+            <div class="field"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div>
+            <div class="field"><label>Business Email</label><input type="email" name="email" placeholder="you@company.com" required></div>
+            <div class="field"><label>Country</label><input type="text" name="country" placeholder="Destination country" required></div>
+            <div class="field"><label>Product</label>
+              <select name="product" required>
+                <option value="">Select...</option>
+                <option>Yellow Maize</option>
+                <option>White Maize</option>
+                <option>Wheat</option>
+                <option>Bajra</option>
+                <option>Groundnut</option>
+                <option>Other Grains</option>
+              </select>
+            </div>
+            <div class="field full"><label>Message / Requirement</label><textarea name="message" rows="4" placeholder="Quantity, packaging, target port..."></textarea></div>
+            <button type="submit" class="btn btn-primary full">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <strong style="color: var(--white); font-size: 1.2rem; font-family: var(--font-serif);">OCEAN STALLION</strong>
+      <p style="margin-top: 15px;">India-based agricultural commodity merchant-export business. Sourcing mainly from farmers for international buyers.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a onclick="navigate('home')" style="cursor:pointer;">About Us</a></li>
+        <li><a onclick="navigate('certificates')" style="cursor:pointer;">Certificates</a></li>
+        <li><a onclick="navigate('trade')" style="cursor:pointer;">Trade Progress</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Commodities</h5>
+      <ul>
+        <li><a onclick="navigate('products')" style="cursor:pointer;">Yellow Maize</a></li>
+        <li><a onclick="navigate('products')" style="cursor:pointer;">White Maize</a></li>
+        <li><a onclick="navigate('products')" style="cursor:pointer;">Wheat</a></li>
+        <li><a onclick="navigate('products')" style="cursor:pointer;">Groundnut</a></li>
+        <li><a onclick="navigate('products')" style="cursor:pointer;">Other Grains</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h5>Get in touch</h5>
+      <ul class="footer-contact">
+        <li><a href="mailto:oceanstallionint@gmail.com">oceanstallionint@gmail.com</a></li>
+        <li><a href="tel:+919638808767">+91 96388 08767</a></li>
+        <li>Mahisagar, Gujarat 389230</li>
+        <li>India</li>
+      </ul>
+      
+      <div class="social-links" style="margin-top: 20px;">
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.6.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1-.4-2.2-.1-1.3-.1-1.6-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4 1.3-.1 1.6-.1 4.9-.1zM12 4c-3.2 0-3.5 0-4.8.1-1 .1-1.5.2-1.8.3-.4.2-.7.4-.9.7-.3.3-.5.6-.7.9-.1.3-.2.8-.3 1.8C3.5 8.5 3.5 8.8 3.5 12s0 3.5.1 4.8c.1 1 .2 1.5.3 1.8.2.4.4.7.7.9.3.3.6.5.9.7.3.1.8.2 1.8.3 1.3.1 1.6.1 4.8.1s3.5 0 4.8-.1c1-.1 1.5-.2 1.8-.3.4-.2.7-.4.9-.7.3-.3.5-.6.7-.9.1-.3.2-.8.3-1.8.1-1.3.1-1.6.1-4.8s0-3.5-.1-4.8c-.1-1-.2-1.5-.3-1.8-.2-.4-.4-.7-.7-.9-.3-.3-.6-.5-.9-.7-.3-.1-.8-.2-1.8-.3C15.5 4 15.2 4 12 4zm0 2.8c-2.9 0-5.2 2.3-5.2 5.2S9.1 17.2 12 17.2s5.2-2.3 5.2-5.2-2.3-5.2-5.2-5.2zm0 8.6c-1.9 0-3.4-1.5-3.4-3.4S10.1 8.6 12 8.6s3.4 1.5 3.4 3.4-1.5 3.4-3.4 3.4zm5.4-9.8c-.7 0-1.2.6-1.2 1.2s.6 1.2 1.2 1.2 1.2-.6 1.2-1.2-.6-1.2-1.2-1.2z"/></svg>
+        </a>
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12z"/></svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3.1-1.9-3.1-1.9 0-2.2 1.5-2.2 3v5.7H9.2V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.3-1.9 3.6 0 4.2 2.3 4.2 5.4v6.3zM5.1 7.4c-1.2 0-2.1-.9-2.1-2.1s.9-2.1 2.1-2.1 2.1.9 2.1 2.1-.9 2.1-2.1 2.1zM7 20.4H3.2V9H7v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.8v20.4c0 1 .8 1.8 1.8 1.8h20.4c1 0 1.8-.8 1.8-1.8V1.8c0-1-.8-1.8-1.8-1.8z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2025 OCEAN STALLION INTERNATIONAL. All rights reserved.</span>
+    <span style="font-size: 0.72rem;">Admin workflow & verified stats require backend integration.</span>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   SINGLE PAGE APP ROUTER & INTERACTIVITY
+   ========================================================= */
+function navigate(pageId) {
+  document.querySelectorAll('.page-section').forEach(page => {
+    page.classList.remove('active');
+  });
+  
+  document.querySelectorAll('.nav a').forEach(link => {
+    link.classList.remove('active');
+  });
+
+  const selectedPage = document.getElementById('page-' + pageId);
+  if(selectedPage) selectedPage.classList.add('active');
+
+  const activeLink = document.getElementById('nav-' + pageId);
+  if(activeLink) activeLink.classList.add('active');
+
+  document.getElementById('navMenu').classList.remove('open');
+  document.getElementById('menuToggle').setAttribute('aria-expanded', 'false');
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.getElementById('menuToggle').addEventListener('click', function() {
+  const nav = document.getElementById('navMenu');
+  const isOpen = nav.classList.toggle('open');
+  this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slide');
+setInterval(() => {
+  if(slides.length > 0) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+}, 5000);
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+  }, 2500);
+});
+</script>
+</body>
+</html>
