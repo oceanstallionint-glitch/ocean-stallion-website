@@ -104,7 +104,7 @@ p { margin: 0 0 1em; }
 .hero { position: relative; min-height: clamp(560px, 88vh, 820px); display: flex; align-items: center; overflow: hidden; background: var(--navy-900); color: var(--white); }
 .hero-slides { position: absolute; inset: 0; z-index: 0; }
 .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.4s ease; }
-@media (max-width: 768px) { .hero-slide { background-position: 70% center; } } /* Mobile fix */
+@media (max-width: 768px) { .hero-slide { background-position: 70% center; } }
 .hero-slide.active { opacity: 1; }
 .hero-slide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,21,40,0.55) 0%, rgba(7,21,40,0.75) 45%, rgba(7,21,40,0.9) 100%), linear-gradient(90deg, rgba(7,21,40,0.8) 0%, rgba(7,21,40,0.2) 60%); }
 .hero-inner { position: relative; z-index: 2; padding-block: clamp(80px, 12vh, 140px); max-width: 760px; }
@@ -386,4 +386,374 @@ p { margin: 0 0 1em; }
           </article>
 
           <article class="product-card">
-            <
+            <div class="product-media"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=800&q=80" alt="Wheat"></div>
+            <div class="product-body">
+              <h3>Wheat</h3>
+              <p>Milling and feed grade wheat, with quality parameters agreed with the buyer and verified before dispatch.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media"><img src="bajra.jpg" alt="Bajra"></div>
+            <div class="product-body">
+              <h3>Pearl Millet (Bajra)</h3>
+              <p>Traditional Indian coarse grain, sourced from farmers and cleaned to buyer specification.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media"><img src="https://images.unsplash.com/photo-1567892737950-30c4db37cd89?auto=format&fit=crop&w=800&q=80" alt="Groundnut"></div>
+            <div class="product-body">
+              <h3>Groundnut</h3>
+              <p>Bold and Java varieties, subject to availability, with oil content discussed against the buyer's requirement.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="Other Grains"></div>
+            <div class="product-body">
+              <h3>Other Grains & Pulses</h3>
+              <p>We also facilitate the sourcing of other agricultural commodities based on specific buyer requirements and seasonal availability.</p>
+              <a onclick="navigate('contact')" class="btn btn-outline" style="margin-top:15px; font-size: 0.7rem; padding: 8px 15px; border-color:var(--navy-800); color:var(--navy-800);">Enquire Now</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== CERTIFICATES PAGE ==================== -->
+  <div id="page-certificates" class="page-section">
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Certificates & Compliance</span><hr class="rule" />
+        <h2>Certifications we are working toward.</h2>
+        <p style="color:var(--muted); margin-bottom: 40px;">We are a new exporter. We will never claim a certificate we have not obtained.</p>
+        
+        <div class="cert-grid">
+          <div class="cert-card">
+            <div class="cert-icon">📄</div>
+            <h3>Import Export Code (IEC)</h3>
+            <p style="font-size:0.9rem; color:var(--muted); flex:1;">Mandatory code required for any import or export from India.</p>
+            <span class="cert-status progress">Application in progress</span>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon">🛡️</div>
+            <h3>APEDA Registration</h3>
+            <p style="font-size:0.9rem; color:var(--muted); flex:1;">Required for scheduled agricultural products like maize and wheat.</p>
+            <span class="cert-status progress">Application in progress</span>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon">✅</div>
+            <h3>FSSAI License</h3>
+            <p style="font-size:0.9rem; color:var(--muted); flex:1;">Food safety registration required for food-grade commodities.</p>
+            <span class="cert-status progress">Application in progress</span>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon">🌾</div>
+            <h3>Phytosanitary Certificate</h3>
+            <p style="font-size:0.9rem; color:var(--muted); flex:1;">Issued per shipment confirming the consignment is pest-free.</p>
+            <span class="cert-status planned">Applied per shipment</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== GALLERY PAGE ==================== -->
+  <div id="page-gallery" class="page-section">
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Gallery</span><hr class="rule" />
+        <h2>Photo & Video Gallery</h2>
+        <p style="color:var(--muted); margin-bottom: 40px;">Genuine photographs will be published here as operations progress. No stock imagery is presented as our own.</p>
+        
+        <div class="gallery-grid">
+          <div class="gallery-tile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:30px; margin-bottom:12px; color:var(--gold-500);"><path d="M12 22V10"/><path d="M12 10C9 10 7 8 7 5c3 0 5 2 5 5Z"/></svg>
+            <strong>Farm & Field</strong>
+            <span style="font-size:0.8rem; color:var(--gold-500); margin-top:8px;">Coming Soon</span>
+          </div>
+          <div class="gallery-tile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:30px; margin-bottom:12px; color:var(--gold-500);"><path d="M3 7l9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
+            <strong>Packaging</strong>
+            <span style="font-size:0.8rem; color:var(--gold-500); margin-top:8px;">Coming Soon</span>
+          </div>
+          <div class="gallery-tile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:30px; margin-bottom:12px; color:var(--gold-500);"><path d="M3 15l4-8h10l4 8"/><path d="M3 15h18v3H3z"/></svg>
+            <strong>Port Operations</strong>
+            <span style="font-size:0.8rem; color:var(--gold-500); margin-top:8px;">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== TRADE PROGRESS PAGE ==================== -->
+  <div id="page-trade" class="page-section">
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Trade Progress</span><hr class="rule" />
+        <h2>Verified aggregate data — nothing else.</h2>
+        <p style="color:var(--muted); margin-bottom: 40px;">We only show aggregate figures that we can substantiate through shipment documents. Buyer identities are never published.</p>
+        
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-label">Completed Export Shipments</div>
+            <div class="stat-val">Not yet available</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total Quantity Exported (MT)</div>
+            <div class="stat-val">Not yet available</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total Quantity Traded/Procured (MT)</div>
+            <div class="stat-val">Not yet available</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Products Supplied</div>
+            <div class="stat-val">Not yet available</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Reporting Period</div>
+            <div class="stat-val">Not yet available</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 40px; background: var(--white); border: 1px solid var(--line); padding: 30px; border-radius: var(--radius-md);">
+          <h3>Product-wise Quantities</h3>
+          <ul style="list-style: none; padding: 0; display: grid; gap: 15px; margin-top: 20px;">
+            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:10px;"><span>Yellow Maize</span> <strong>Not yet available</strong></li>
+            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:10px;"><span>White Maize</span> <strong>Not yet available</strong></li>
+            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:10px;"><span>Wheat</span> <strong>Not yet available</strong></li>
+            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:10px;"><span>Pearl Millet (Bajra)</span> <strong>Not yet available</strong></li>
+            <li style="display:flex; justify-content:space-between;"><span>Groundnut</span> <strong>Not yet available</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== CONTACT PAGE ==================== -->
+  <div id="page-contact" class="page-section">
+    <section class="section contact-section">
+      <div class="container contact-grid">
+        <div>
+          <span class="eyebrow">Contact</span><hr class="rule" />
+          <h2 style="color: var(--white);">Let's discuss your requirement.</h2>
+          <p style="color: rgba(255,255,255,0.8);">Share the commodity, specification and destination, and we will respond with what we can realistically offer.</p>
+          
+          <ul class="contact-info-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <a href="mailto:oceanstallionint@gmail.com">oceanstallionint@gmail.com</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
+              <a href="tel:+919638808767">+91 96388 08767</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+              <a href="https://maps.app.goo.gl/WwqwDWzPfho8j4dj9" target="_blank">Mahisagar, Gujarat 389230</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <form class="quote-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="inquiryForm">
+            <input type="hidden" name="form-name" value="contact" />
+            <p style="display: none;">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+            <div class="field"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div>
+            <div class="field"><label>Business Email</label><input type="email" name="email" placeholder="you@company.com" required></div>
+            <div class="field"><label>Country</label><input type="text" name="country" placeholder="Destination country" required></div>
+            <div class="field"><label>Product</label>
+              <select name="product" required>
+                <option value="">Select...</option>
+                <option>Yellow Maize</option>
+                <option>White Maize</option>
+                <option>Wheat</option>
+                <option>Bajra</option>
+                <option>Groundnut</option>
+                <option>Other Grains</option>
+              </select>
+            </div>
+            <div class="field full"><label>Message / Requirement</label><textarea name="message" rows="4" placeholder="Quantity, packaging, target port..." required></textarea></div>
+            <button type="submit" class="btn btn-primary full" id="submitBtn">Send Inquiry</button>
+            <div id="formStatus" style="grid-column: 1 / -1; text-align: center; display: none; margin-top: 10px;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+        <svg class="logo-mark" style="width: 45px; height: 45px;" viewBox="0 0 56 56">
+          <circle cx="28" cy="28" r="27" fill="#0B1F3A"/>
+          <circle cx="28" cy="28" r="23" fill="none" stroke="#C6A15B" stroke-width="0.9" opacity="0.75"/>
+          <g stroke="#C6A15B" stroke-width="1.2" stroke-linecap="round" fill="none">
+            <line x1="28" y1="14.5" x2="28" y2="29"/>
+            <path d="M28 17 Q24.5 17 24.5 20.5"/><path d="M28 20 Q24.5 20 24.5 23.5"/><path d="M28 23 Q24.5 23 24.5 26.5"/>
+            <path d="M28 17 Q31.5 17 31.5 20.5"/><path d="M28 20 Q31.5 20 31.5 23.5"/><path d="M28 23 Q31.5 23 31.5 26.5"/>
+            <path d="M28 14.5 L28 11.5"/>
+          </g>
+          <g stroke="#C6A15B" stroke-width="1.15" stroke-linecap="round" fill="none">
+            <path d="M14.5 34.5 Q17.5 32 20.5 34.5 T 26.5 34.5 T 32.5 34.5 T 38.5 34.5 T 41.5 34.5"/>
+            <path d="M14.5 38.5 Q17.5 36 20.5 38.5 T 26.5 38.5 T 32.5 38.5 T 38.5 38.5 T 41.5 38.5"/>
+            <path d="M16.5 42.5 Q19.5 40 22.5 42.5 T 28.5 42.5 T 34.5 42.5 T 39.5 42.5"/>
+          </g>
+        </svg>
+        <div>
+          <strong style="color: var(--white); font-size: 1.1rem; font-family: var(--font-serif); display: block; line-height: 1;">OCEAN STALLION</strong>
+          <span style="color: var(--gold-400); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;">INTERNATIONAL</span>
+        </div>
+      </div>
+      <p>India-based agricultural commodity merchant-export business. Sourcing mainly from farmers for international buyers.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a onclick="navigate('home')" style="cursor:pointer;">About Us</a></li>
+        <li><a onclick="navigate('certificates')" style="cursor:pointer;">Certificates</a></li>
+        <li><a onclick="navigate('trade')" style="cursor:pointer;">Trade Progress</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Commodities</h5>
+      <ul>
+        <li><a onclick="navigate('products')" style="cursor:pointer;">Yellow Maize</a></li>
+        <li><a onclick="navigate('products')" style="cursor:pointer;">White Maize</a></li>
+        <li><a onclick="navigate('products')" style="cursor:pointer;">Wheat</a></li>
+        <li><a onclick="navigate('products')" style="cursor:pointer;">Groundnut</a></li>
+        <li><a onclick="navigate('products')" style="cursor:pointer;">Other Grains</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Get in touch</h5>
+      <ul class="footer-contact">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <a href="mailto:oceanstallionint@gmail.com">oceanstallionint@gmail.com</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
+          <a href="tel:+919638808767">+91 96388 08767</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <a href="https://maps.app.goo.gl/WwqwDWzPfho8j4dj9" target="_blank">Mahisagar, Gujarat 389230</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>India</span>
+        </li>
+      </ul>
+      
+      <div class="social-links" style="margin-top: 20px;">
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.6.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1-.4-2.2-.1-1.3-.1-1.6-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4 1.3-.1 1.6-.1 4.9-.1zM12 4c-3.2 0-3.5 0-4.8.1-1 .1-1.5.2-1.8.3-.4.2-.7.4-.9.7-.3.3-.5.6-.7.9-.1.3-.2.8-.3 1.8C3.5 8.5 3.5 8.8 3.5 12s0 3.5.1 4.8c.1 1 .2 1.5.3 1.8.2.4.4.7.7.9.3.3.6.5.9.7.3.1.8.2 1.8.3 1.3.1 1.6.1 4.8.1s3.5 0 4.8-.1c1-.1 1.5-.2 1.8-.3.4-.2.7-.4.9-.7.3-.3.5-.6.7-.9.1-.3.2-.8.3-1.8.1-1.3.1-1.6.1-4.8s0-3.5-.1-4.8c-.1-1-.2-1.5-.3-1.8-.2-.4-.4-.7-.7-.9-.3-.3-.6-.5-.9-.7-.3-.1-.8-.2-1.8-.3C15.5 4 15.2 4 12 4zm0 2.8c-2.9 0-5.2 2.3-5.2 5.2S9.1 17.2 12 17.2s5.2-2.3 5.2-5.2-2.3-5.2-5.2-5.2zm0 8.6c-1.9 0-3.4-1.5-3.4-3.4S10.1 8.6 12 8.6s3.4 1.5 3.4 3.4-1.5 3.4-3.4 3.4zm5.4-9.8c-.7 0-1.2.6-1.2 1.2s.6 1.2 1.2 1.2 1.2-.6 1.2-1.2-.6-1.2-1.2-1.2z"/></svg>
+        </a>
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12z"/></svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3.1-1.9-3.1-1.9 0-2.2 1.5-2.2 3v5.7H9.2V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.3-1.9 3.6 0 4.2 2.3 4.2 5.4v6.3zM5.1 7.4c-1.2 0-2.1-.9-2.1-2.1s.9-2.1 2.1-2.1 2.1.9 2.1 2.1-.9 2.1-2.1 2.1zM7 20.4H3.2V9H7v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.8v20.4c0 1 .8 1.8 1.8 1.8h20.4c1 0 1.8-.8 1.8-1.8V1.8c0-1-.8-1.8-1.8-1.8z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container footer-bottom">
+    <span>© 2025 OCEAN STALLION INTERNATIONAL. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   SINGLE PAGE APP ROUTER & INTERACTIVITY
+   ========================================================= */
+function navigate(pageId) {
+  document.querySelectorAll('.page-section').forEach(page => {
+    page.classList.remove('active');
+  });
+  
+  document.querySelectorAll('.nav a').forEach(link => {
+    link.classList.remove('active');
+  });
+
+  const selectedPage = document.getElementById('page-' + pageId);
+  if(selectedPage) selectedPage.classList.add('active');
+
+  const activeLink = document.getElementById('nav-' + pageId);
+  if(activeLink) activeLink.classList.add('active');
+
+  document.getElementById('navMenu').classList.remove('open');
+  document.getElementById('menuToggle').setAttribute('aria-expanded', 'false');
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.getElementById('menuToggle').addEventListener('click', function() {
+  const nav = document.getElementById('navMenu');
+  const isOpen = nav.classList.toggle('open');
+  this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slide');
+setInterval(() => {
+  if(slides.length > 0) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+}, 5000);
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+  }, 2000); // Loader 2 second baad hat jayega
+});
+
+// Form Submit Handling
+document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const status = document.getElementById('formStatus');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  const formData = new FormData(this);
+  
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString()
+  })
+  .then(() => {
+    status.style.display = 'block';
+    status.style.color = '#4ade80'; // Green
+    status.textContent = 'Thank you. We have received your inquiry.';
+    this.reset();
+  })
+  .catch((error) => {
+    status.style.display = 'block';
+    status.style.color = '#f87171'; // Red
+    status.textContent = 'Something went wrong. Please try again.';
+  })
+  .finally(() => {
+    btn.textContent = 'Send Inquiry';
+    btn.disabled = false;
+  });
+});
+</script>
+</body>
+</html>
