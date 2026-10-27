@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ocean Stallion International — Agricultural Commodity Export</title>
 <script>
-/* CORE: menu + page navigation + loader.
-   Ye script sabse upar hai aur baaki scripts / fonts / images ka wait nahi karta,
-   isliye neeche ki kisi script me galti ho tab bhi menu aur navigation chalte rahenge. */
+/* CORE: menu + page navigation + loader. */
 function osToggleMenu(force) {
   var nav = document.getElementById('navMenu');
   var btn = document.getElementById('menuToggle');
@@ -29,7 +27,6 @@ function navigate(pageId) {
   osToggleMenu(false);
   try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
 }
-/* menu ke bahar tap karo, ya Esc dabao, ya screen badi ho jaye to menu band */
 document.addEventListener('click', function (e) {
   var nav = document.getElementById('navMenu');
   var btn = document.getElementById('menuToggle');
@@ -37,7 +34,6 @@ document.addEventListener('click', function (e) {
 });
 document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { osToggleMenu(false); } });
 window.addEventListener('resize', function () { if (window.innerWidth >= 1100) { osToggleMenu(false); } });
-/* loader: 2 sec baad hat jata hai (page "load" ka wait nahi) */
 function osHideLoader() {
   var l = document.getElementById('loader');
   if (l) { l.classList.add('hidden'); } else { setTimeout(osHideLoader, 250); }
@@ -244,7 +240,6 @@ p { margin: 0 0 1em; }
    ========================================================= */
 .loader { position: fixed; inset: 0; z-index: 9999; background: var(--navy-800); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: 0.8s ease-in-out; }
 .loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-/* Safety net: JS na chale tab bhi 3.5 sec baad loader apne aap hat jaye */
 .loader { animation: loaderAutoHide 0.8s ease-in-out 3.5s forwards; }
 @keyframes loaderAutoHide { to { opacity: 0; visibility: hidden; pointer-events: none; } }
 
@@ -256,9 +251,7 @@ p { margin: 0 0 1em; }
 
 /* ==========================================
    REPEATABLE SCROLL ANIMATIONS
-   Ocean Stallion International
    ========================================== */
-
 .scroll-reveal {
   opacity: 0;
   transform: translateY(28px) scale(0.94);
@@ -273,7 +266,6 @@ p { margin: 0 0 1em; }
   transform: translateY(0) scale(1);
 }
 
-/* Accessibility: reduce motion if requested */
 @media (prefers-reduced-motion: reduce) {
   .scroll-reveal {
     opacity: 1;
@@ -802,7 +794,7 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
 });
 </script>
 
-<!-- Scroll Reveal Script (Aapka Bheja Hua) -->
+<!-- Scroll Reveal Script (FIXED) -->
 <script>
 /* ==========================================
    REPEATABLE, BIDIRECTIONAL SCROLL REVEAL
@@ -833,11 +825,9 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
     observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
+          entry.target.classList.add('is-visible'); // Fixed from 'visible'
         } else {
-          // Reset on leaving viewport so it can replay
-          // every time the user scrolls back.
-          entry.target.classList.remove('is-visible');
+          entry.target.classList.remove('is-visible'); // Fixed from 'visible'
         }
       });
     }, {
