@@ -161,3 +161,30 @@
     });
   }
 })();
+
+// Repeatable scroll reveal animation
+(function () {
+  const revealElements = document.querySelectorAll(
+    '.page-section h1, .page-section h2, .page-section p, .page-section img, .page-section .container > *'
+  );
+
+  revealElements.forEach(function (element) {
+    element.classList.add('scroll-reveal');
+  });
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  revealElements.forEach(function (element) {
+    observer.observe(element);
+  });
+})();
