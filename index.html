@@ -4,6 +4,46 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ocean Stallion International — Agricultural Commodity Export</title>
+<script>
+/* CORE: menu + page navigation + loader.
+   Ye script sabse upar hai aur baaki scripts / fonts / images ka wait nahi karta,
+   isliye neeche ki kisi script me galti ho tab bhi menu aur navigation chalte rahenge. */
+function osToggleMenu(force) {
+  var nav = document.getElementById('navMenu');
+  var btn = document.getElementById('menuToggle');
+  if (!nav || !btn) return;
+  var open = (typeof force === 'boolean') ? force : !nav.classList.contains('open');
+  if (open) { nav.classList.add('open'); } else { nav.classList.remove('open'); }
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+function navigate(pageId) {
+  var i, list;
+  list = document.querySelectorAll('.page-section');
+  for (i = 0; i < list.length; i++) { list[i].classList.remove('active'); }
+  list = document.querySelectorAll('.nav a');
+  for (i = 0; i < list.length; i++) { list[i].classList.remove('active'); }
+  var page = document.getElementById('page-' + pageId);
+  if (page) { page.classList.add('active'); }
+  var link = document.getElementById('nav-' + pageId);
+  if (link) { link.classList.add('active'); }
+  osToggleMenu(false);
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
+}
+/* menu ke bahar tap karo, ya Esc dabao, ya screen badi ho jaye to menu band */
+document.addEventListener('click', function (e) {
+  var nav = document.getElementById('navMenu');
+  var btn = document.getElementById('menuToggle');
+  if (nav && nav.classList.contains('open') && !nav.contains(e.target) && !(btn && btn.contains(e.target))) { osToggleMenu(false); }
+});
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { osToggleMenu(false); } });
+window.addEventListener('resize', function () { if (window.innerWidth >= 1100) { osToggleMenu(false); } });
+/* loader: 2 sec baad hat jata hai (page "load" ka wait nahi) */
+function osHideLoader() {
+  var l = document.getElementById('loader');
+  if (l) { l.classList.add('hidden'); } else { setTimeout(osHideLoader, 250); }
+}
+setTimeout(osHideLoader, 2000);
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -90,8 +130,9 @@ p { margin: 0 0 1em; }
 
 /* Mobile Menu */
 @media (max-width: 1099px) {
-  .nav { position: absolute; top: 100%; left: 0; right: 0; bottom: auto; z-index: 950; flex-direction: column; align-items: stretch; background: var(--ivory-50); border-bottom: 1px solid var(--line); padding: 12px 24px 24px; transform: translateY(-12px); opacity: 0; visibility: hidden; transition: 0.3s; max-height: calc(100vh - var(--header-h)); overflow-y: auto; -webkit-overflow-scrolling: touch; }
-  .nav.open { transform: translateY(0); opacity: 1; visibility: visible; }
+  .nav { position: absolute; top: 100%; left: 0; right: 0; bottom: auto; z-index: 950; display: none; flex-direction: column; align-items: stretch; background: var(--ivory-50); border-bottom: 1px solid var(--line); box-shadow: 0 18px 30px rgba(7, 21, 40, 0.18); padding: 12px 24px 24px; max-height: calc(100vh - var(--header-h)); overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .nav.open { display: flex; }
+  .site-header { -webkit-backdrop-filter: none; backdrop-filter: none; background: var(--ivory-50); }
   .nav a { padding: 16px 4px; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
 }
 @media (min-width: 1100px) { .menu-toggle { display: none; } }
@@ -129,7 +170,7 @@ p { margin: 0 0 1em; }
 
 /* Why Choose Us */
 .why-section { background: var(--ivory-100); } 
-.why-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); margin-top: 40px; }
+.why-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); margin-top: 40px; }
 .why-card { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--gold-500); border-radius: var(--radius-md); padding: 32px 28px; transition: all 0.4s var(--ease); position: relative; z-index: 1; box-shadow: var(--shadow-sm); }
 .why-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); z-index: 10; border-color: var(--gold-400); }
 .why-card h4 { font-size: 1.1rem; margin-bottom: 8px; color: var(--navy-800); }
@@ -151,7 +192,7 @@ p { margin: 0 0 1em; }
 .product-body p { color: var(--muted); font-size: 0.88rem; flex: 1; }
 
 /* Certificates */
-.cert-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.cert-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); }
 .cert-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 26px 24px; display: flex; flex-direction: column; }
 .cert-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--ivory-50); border: 1px solid var(--gold-300); color: var(--gold-500); display: grid; place-items: center; margin-bottom: 18px; font-size: 1.2rem; }
 .cert-status { display: inline-flex; align-items: center; gap: 8px; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; padding: 7px 14px; border-radius: 999px; align-self: flex-start; }
@@ -252,7 +293,7 @@ p { margin: 0 0 1em; }
       <a onclick="navigate('contact')" id="nav-contact">Contact</a>
     </nav>
     <a onclick="navigate('contact')" class="btn btn-dark header-cta">Request a Quote</a>
-    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Menu" aria-controls="navMenu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button type="button" class="menu-toggle" id="menuToggle" onclick="osToggleMenu()" aria-label="Menu" aria-controls="navMenu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -623,4 +664,135 @@ p { margin: 0 0 1em; }
       
       <div class="social-links" style="margin-top: 20px;">
         <a href="https://www.instagram.com/oceanstallionint?xtok=MTNhdTcycGJmdWo0cw==" target="_blank" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.6.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1-.4-2.2-.1-1.3-.1-1.6-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4 1.3-.1 1.6-.1 4.9-.1zM12 4c-3.2 0-3.5 0-4.8.1-1 .1-1.5.2-1.8.3-.4.2-.7.4-.9.7-.3.3-.5.6-.7.9-.1.3-.2.8-.3 1.8C3.5 8.5 3.5 8.8 3.5 12s0 3.5.1 4.8c.1 1 .2 1.5.3 1.8.2.4.4.7.7.9.3.3.6.5.9.7.3.1.8.2 1.8.3 1.3.1 1.6.1 4.8.1s3.5 0 4.8-.1c1
+          <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.6.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1-.4-2.2-.1-1.3-.1-1.6-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4 1.3-.1 1.6-.1 4.9-.1zM12 4c-3.2 0-3.5 0-4.8.1-1 .1-1.5.2-1.8.3-.4.2-.7.4-.9.7-.3.3-.5.6-.7.9-.1.3-.2.8-.3 1.8C3.5 8.5 3.5 8.8 3.5 12s0 3.5.1 4.8c.1 1 .2 1.5.3 1.8.2.4.4.7.7.9.3.3.6.5.9.7.3.1.8.2 1.8.3 1.3.1 1.6.1 4.8.1s3.5 0 4.8-.1c1-.1 1.5-.2 1.8-.3.4-.2.7-.4.9-.7.3-.3.5-.6.7-.9.1-.3.2-.8.3-1.8.1-1.3.1-1.6.1-4.8s0-3.5-.1-4.8c-.1-1-.2-1.5-.3-1.8-.2-.4-.4-.7-.7-.9-.3-.3-.6-.5-.9-.7-.3-.1-.8-.2-1.8-.3C15.5 4 15.2 4 12 4zm0 2.8c-2.9 0-5.2 2.3-5.2 5.2S9.1 17.2 12 17.2s5.2-2.3 5.2-5.2-2.3-5.2-5.2-5.2zm0 8.6c-1.9 0-3.4-1.5-3.4-3.4S10.1 8.6 12 8.6s3.4 1.5 3.4 3.4-1.5 3.4-3.4 3.4zm5.4-9.8c-.7 0-1.2.6-1.2 1.2s.6 1.2 1.2 1.2 1.2-.6 1.2-1.2-.6-1.2-1.2-1.2z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/ocean-stallion-international-a50888446" target="_blank" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3.1-1.9-3.1-1.9 0-2.2 1.5-2.2 3v5.7H9.2V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.3-1.9 3.6 0 4.2 2.3 4.2 5.4v6.3zM5.1 7.4c-1.2 0-2.1-.9-2.1-2.1s.9-2.1 2.1-2.1 2.1.9 2.1 2.1-.9 2.1-2.1 2.1zM7 20.4H3.2V9H7v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.8v20.4c0 1 .8 1.8 1.8 1.8h20.4c1 0 1.8-.8 1.8-1.8V1.8c0-1-.8-1.8-1.8-1.8z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container footer-bottom">
+    <span>© 2026 OCEAN STALLION INTERNATIONAL. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   HERO SLIDESHOW - har 5 sec me photo badle.
+   Sirf wahi images use hongi jo sach me load hon, isliye
+   blank frame nahi aata. Sab fail hui to navy gradient dikhega.
+   ========================================================= */
+(function () {
+  const urls = [
+    // Verified free Unsplash photos
+    "https://images.unsplash.com/photo-1722413890417-67b8ce3f4005?auto=format&fit=crop&w=1920&q=75",
+    "https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e?auto=format&fit=crop&w=1920&q=75",
+    // Purane links (jo load honge wahi use honge, baaki skip)
+    "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=75",
+    "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1920&q=75",
+    "https://images.unsplash.com/photo-1586528116311-ad8ed745d44c?auto=format&fit=crop&w=1920&q=75",
+    "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1920&q=75",
+    "https://images.unsplash.com/photo-1599818817940-3e14c9a1a202?auto=format&fit=crop&w=1920&q=75"
+    // Apni photos add karne ke liye, jaise: "images/port1.jpg"
+  ];
+  const wrap = document.getElementById("heroSlides");
+  const slides = [];
+  let cur = -1;
+
+  function show(n) {
+    if (cur >= 0) slides[cur].classList.remove("active");
+    cur = n;
+    slides[cur].classList.add("active");
+  }
+
+  urls.forEach(function (u) {
+    const im = new Image();
+    im.onload = function () {
+      const d = document.createElement("div");
+      d.className = "hero-slide";
+      d.style.backgroundImage = 'url("' + u + '")';
+      wrap.appendChild(d);
+      slides.push(d);
+      if (slides.length === 1) {
+        show(0);
+        setInterval(function () {
+          if (slides.length > 1) show((cur + 1) % slides.length);
+        }, 5000);
+      }
+    };
+    im.src = u; // load fail hui to slide banegi hi nahi
+  });
+})();
+
+
+
+</script>
+<script>
+// Form Submit Handling
+// Vercel par Netlify forms nahi chalte, isliye pehle form "Thank you" dikha deta tha par kuch bhejta nahi tha.
+// Ab: FORM_ENDPOINT me Formspree / Web3Forms ka URL daaloge to wahi se email aayega.
+// Khali hai to visitor ke phone/PC ke email app me tayyar email khulta hai (mailto) -- inquiry kabhi gum nahi hoti.
+const FORM_ENDPOINT = "";          // jaise: "https://formspree.io/f/xxxxxxxx"
+const FORM_EMAIL = "oceanstallionint@gmail.com";
+
+document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = this;
+  const btn = document.getElementById('submitBtn');
+  const status = document.getElementById('formStatus');
+  const fd = new FormData(form);
+  if (fd.get('bot-field')) return;                       // spam bots ke liye honeypot
+
+  const d = {
+    name: fd.get('name'), email: fd.get('email'), country: fd.get('country'),
+    product: fd.get('product'), message: fd.get('message')
+  };
+  const mailto = 'mailto:' + FORM_EMAIL
+    + '?subject=' + encodeURIComponent('Inquiry: ' + d.product + ' - ' + d.country)
+    + '&body=' + encodeURIComponent(
+        'Name: ' + d.name + '\nEmail: ' + d.email + '\nCountry: ' + d.country +
+        '\nProduct: ' + d.product + '\n\nRequirement:\n' + d.message);
+
+  function show(msg, color, withMailLink) {
+    status.style.display = 'block';
+    status.style.color = color;
+    status.textContent = msg + ' ';
+    if (withMailLink) {
+      const a = document.createElement('a');
+      a.href = mailto; a.textContent = 'Click here to email us directly';
+      a.style.textDecoration = 'underline'; a.style.color = 'inherit';
+      status.appendChild(a);
+    }
+  }
+
+  if (!FORM_ENDPOINT) {                                   // mailto mode
+    show('Your email app is opening with your inquiry filled in. Please press Send to complete it.', '#4ade80', true);
+    window.location.href = mailto;
+    return;
+  }
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  fetch(FORM_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(d)
+  })
+  .then(function (res) {
+    if (!res.ok) throw new Error('HTTP ' + res.status);   // 4xx/5xx = bheja nahi gaya
+    show('Thank you. We have received your inquiry.', '#4ade80', false);
+    form.reset();
+  })
+  .catch(function () {
+    show('Sorry, your inquiry could not be sent.', '#f87171', true);
+  })
+  .finally(function () {
+    btn.textContent = 'Send Inquiry';
+    btn.disabled = false;
+  });
+});
+</script>
+</body>
+</html>
