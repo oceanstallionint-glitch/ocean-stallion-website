@@ -252,6 +252,17 @@ p { margin: 0 0 1em; }
 
 @keyframes logoPulse { 0% { transform: scale(0.97); } 100% { transform: scale(1.04); } }
 @keyframes textPulse { 0% { opacity: 0.4; } 100% { opacity: 1; } }
+   /* Repeatable scroll animation */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(25px) scale(0.97);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 </style>
 </head>
 <body>
