@@ -121,6 +121,48 @@ p { margin: 0 0 1em; }
 .nav a { padding: 16px 4px; border-bottom: 1px solid var(--line); font-size: 0.95rem; color: var(--navy-800); font-weight: 500; cursor: pointer; }
 .nav a:hover, .nav a.active { color: var(--gold-500); }
 
+/* =========================================================
+   NAV LINK HOVER POLISH — Products / Certificates / Gallery
+   / Trade Progress / Contact (aur Home, same look ke liye)
+   ========================================================= */
+.nav a {
+  position: relative;
+  transition: color 0.28s ease, padding-left 0.28s ease, background-color 0.28s ease;
+}
+
+.nav a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 0;
+  background: var(--gold-500);
+  border-radius: 2px;
+  transform: translateY(-50%);
+  transition: height 0.28s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  color: var(--gold-500);
+  padding-left: 14px;
+  background-color: rgba(198, 161, 91, 0.08);
+}
+
+.nav a:hover::before,
+.nav a:focus-visible::before,
+.nav a.active::before {
+  height: 60%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav a,
+  .nav a::before {
+    transition: none;
+  }
+}
+
 .menu-toggle { display: inline-flex; flex-direction: column; justify-content: center; width: 44px; height: 44px; gap: 5px; background: transparent; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); align-items: center; cursor: pointer; }
 .menu-toggle span { display: block; width: 20px; height: 1.6px; background: var(--navy-800); transition: 0.3s; }
 
