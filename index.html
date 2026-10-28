@@ -232,6 +232,16 @@ p { margin: 0 0 1em; }
 .product-card:hover .product-body h3 {
   color: var(--gold-500); /* Hover par title Gold ho jayega */
 }
+
+/* 3. Description Text Badhne Ka Effect (NEW) */
+.product-body p {
+  transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), color 0.3s ease;
+  transform-origin: left top; /* Text left se smoothly bada hoga */
+}
+.product-card:hover .product-body p {
+  transform: scale(1.04); /* Text halka sa bada ho jayega */
+  color: var(--navy-800); /* Text thoda aur dark ho jayega taaki clear dikhe */
+}
 .product-media { aspect-ratio: 4 / 3; overflow: hidden; position: relative; background: var(--ivory-100); }
 .product-media img { width: 100%; height: 100%; object-fit: cover; }
 .product-body { padding: 18px; display: flex; flex-direction: column; flex: 1; }
