@@ -116,7 +116,24 @@ p { margin: 0 0 1em; }
 .brand-tagline { font-size: 0.65rem; color: var(--muted); margin-top: 6px; font-weight: 500; font-family: var(--font-serif); font-style: italic; letter-spacing: 0.02em; }
 
 /* Navigation */
-.nav { position: absolute; top: 100%; left: 0; right: 0; z-index: 950; display: none; flex-direction: column; align-items: stretch; background: var(--ivory-50); border-bottom: 1px solid var(--line); box-shadow: 0 18px 30px rgba(7, 21, 40, 0.18); padding: 12px 24px 24px; max-height: calc(100vh - var(--header-h)); overflow-y: auto; }
+/* Menu ko logo ke niche align karne ke liye aur box shape dene ke liye */
+.nav { 
+  position: absolute; 
+  top: calc(100% - 10px); /* Thoda sa upar shift kiya taaki header se chipke nahi */
+  left: 24px;  /* Left se 24px andar (logo ke barabar) */
+  right: 24px; /* Right se 24px andar */
+  z-index: 950; 
+  display: none; 
+  flex-direction: column; 
+  align-items: stretch; 
+  background: var(--ivory-50); 
+  border: 1px solid var(--line); /* Border lagaya hai */
+  border-radius: var(--radius-md); /* Box ke corners gol karne ke liye */
+  box-shadow: 0 18px 30px rgba(7, 21, 40, 0.18); 
+  padding: 12px 20px 20px; /* Thoda padding adjust kiya */
+  max-height: calc(100vh - var(--header-h)); 
+  overflow-y: auto; 
+}
 .nav.open { display: flex; }
 .nav a { padding: 16px 4px; border-bottom: 1px solid var(--line); font-size: 0.95rem; color: var(--navy-800); font-weight: 500; cursor: pointer; }
 .nav a:hover, .nav a.active { color: var(--gold-500); }
