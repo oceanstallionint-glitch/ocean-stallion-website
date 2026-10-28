@@ -214,6 +214,24 @@ p { margin: 0 0 1em; }
 .product-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
 .product-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; transition: 0.4s; }
 .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--gold-300); }
+/* =========================================================
+   PREMIUM HOVER EFFECT FOR ALL COMMODITIES (Auto-applies)
+   ========================================================= */
+/* 1. Image Zoom Effect */
+.product-media img {
+  transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.product-card:hover .product-media img {
+  transform: scale(1.08); /* Image smoothly zoom hogi */
+}
+
+/* 2. Title Color Change */
+.product-body h3 {
+  transition: color 0.3s ease;
+}
+.product-card:hover .product-body h3 {
+  color: var(--gold-500); /* Hover par title Gold ho jayega */
+}
 .product-media { aspect-ratio: 4 / 3; overflow: hidden; position: relative; background: var(--ivory-100); }
 .product-media img { width: 100%; height: 100%; object-fit: cover; }
 .product-body { padding: 18px; display: flex; flex-direction: column; flex: 1; }
