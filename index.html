@@ -77,7 +77,7 @@ body {
   margin: 0; font-family: var(--font-sans); color: var(--ink);
   background: var(--ivory-50); font-size: 16px; line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
@@ -114,25 +114,41 @@ p { margin: 0 0 1em; }
 .brand-name { font-family: var(--font-serif); font-weight: 700; font-size: 1.25rem; letter-spacing: 0.04em; color: var(--navy-800); }
 .brand-sub { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-500); font-weight: 700; margin-top: 4px; }
 .brand-tagline { font-size: 0.65rem; color: var(--muted); margin-top: 6px; font-weight: 500; font-family: var(--font-serif); font-style: italic; letter-spacing: 0.02em; }
-
-/* Navigation */
-/* Menu ko logo ke niche align karne ke liye aur box shape dene ke liye */
+/* Menu Box - Desktop/Tablet par logo se hamburger tak, Mobile par full width */
 .nav { 
   position: absolute; 
-  top: calc(100% - 10px); /* Thoda sa upar shift kiya taaki header se chipke nahi */
-  left: 30px;  /* Left se 24px andar (logo ke barabar) */
-  right: 30px; /* Right se 24px andar */
+  top: calc(100% - 10px); 
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px); /* Logo aur hamburger ke barabar */
+  max-width: 1152px; 
   z-index: 950; 
   display: none; 
   flex-direction: column; 
   align-items: stretch; 
   background: var(--ivory-50); 
-  border: 1px solid var(--line); /* Border lagaya hai */
-  border-radius: var(--radius-md); /* Box ke corners gol karne ke liye */
+  border: 1px solid var(--line); 
+  border-radius: var(--radius-md); 
   box-shadow: 0 18px 30px rgba(7, 21, 40, 0.18); 
-  padding: 12px 20px 20px; /* Thoda padding adjust kiya */
+  padding: 12px 20px 20px; 
   max-height: calc(100vh - var(--header-h)); 
   overflow-y: auto; 
+}
+
+/* Mobile ke liye: Left se Right tak pura khule */
+@media (max-width: 768px) {
+  .nav {
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: none;
+    transform: none;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    top: 100%; /* Mobile me header se bilkul chipka rahe */
+  }
 }
 .nav.open { display: flex; }
 .nav a { padding: 16px 4px; border-bottom: 1px solid var(--line); font-size: 0.95rem; color: var(--navy-800); font-weight: 500; cursor: pointer; }
