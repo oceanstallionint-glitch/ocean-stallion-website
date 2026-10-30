@@ -872,7 +872,7 @@ p { margin: 0 0 1em; }
 
 <!-- Form Submit JS -->
 <script>
-const FORM_ENDPOINT = "";          
+const FORM_ENDPOINT = "https://api.web3forms.com/submit";          
 const FORM_EMAIL = "oceanstallionint@gmail.com";
 
 document.getElementById('inquiryForm').addEventListener('submit', function(e) {
@@ -884,6 +884,9 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
   if (fd.get('bot-field')) return; 
 
   const d = {
+    access_key: "PASTE_KEY_HERE",
+  subject: "New Inquiry - " + fd.get('product') + " (" + fd.get('country') + ")",
+  from_name: "Ocean Stallion Website",
     name: fd.get('name'), email: fd.get('email'), country: fd.get('country'),
     product: fd.get('product'), message: fd.get('message')
   };
