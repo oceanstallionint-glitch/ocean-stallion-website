@@ -11,6 +11,7 @@
 <meta property="og:title" content="Ocean Stallion International" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.oceanstallioninternational.com/" />
+<link rel="icon" type="image/webp" href="favicon.webp" />
 <link rel="canonical" href="https://www.oceanstallioninternational.com/" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Ocean Stallion International","alternateName":"Ocean Stallion","url":"https://www.oceanstallioninternational.com/"}</script>
 <script>
@@ -423,7 +424,7 @@ p { margin: 0 0 1em; }
 <!-- HEADER -->
 <header class="site-header">
   <div class="container">
-    <a class="brand" onclick="navigate('home')">
+    <a class="brand" href="#" onclick="navigate('home'); return false;">
       <span class="logo-mark" role="img" aria-label="Ocean Stallion International logo"></span>
       <span class="brand-text">
         <span class="brand-name">OCEAN STALLION</span>
@@ -433,12 +434,11 @@ p { margin: 0 0 1em; }
     </a>
     
     <nav class="nav" id="navMenu">
-      <a onclick="navigate('home')" id="nav-home" class="active">Home</a>
-      <a onclick="navigate('products')" id="nav-products">Products</a>
-      <a onclick="navigate('certificates')" id="nav-certificates">Certificates</a>
-      <a onclick="navigate('gallery')" id="nav-gallery">Gallery</a>
-      <a onclick="navigate('trade')" id="nav-trade">Trade Progress</a>
-      <a onclick="navigate('contact')" id="nav-contact">Contact</a>
+      <a href="#" onclick="navigate('home'); return false;" id="nav-home" class="active">Home</a>
+      <a href="#" onclick="navigate('products'); return false;" id="nav-products">Products</a>
+      <a href="#" onclick="navigate('certificates'); return false;" id="nav-certificates">Certificates</a>
+      <a href="#" onclick="navigate('gallery'); return false;" id="nav-gallery">Gallery</a>
+      <a href="#" onclick="navigate('contact'); return false;" id="nav-contact">Contact</a>
     </nav>
     
     <button type="button" class="menu-toggle" id="menuToggle" onclick="osToggleMenu()" aria-label="Menu" aria-controls="navMenu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -459,8 +459,8 @@ p { margin: 0 0 1em; }
             We aim to source yellow maize, white maize, wheat, pearl millet and groundnut — primarily directly from farmers — and align quality checks to each buyer's requirement.
           </p>
           <div class="hero-actions">
-            <a onclick="navigate('products')" class="btn btn-primary">Explore Products →</a>
-            <a onclick="navigate('contact')" class="btn btn-outline">Request a Quote</a>
+            <a href="#" onclick="navigate('products'); return false;" class="btn btn-primary">Explore Products →</a>
+            <a href="#" onclick="navigate('contact'); return false;" class="btn btn-outline">Request a Quote</a>
           </div>
         </div>
       </div>
@@ -515,16 +515,6 @@ p { margin: 0 0 1em; }
       </div>
     </section>
 
-    <section class="section testimonial-section">
-      <div class="container">
-        <span class="eyebrow" style="color: var(--gold-400);">Testimonials</span><hr class="rule" style="margin: 0 auto 22px;" />
-        <h2 style="color: var(--white);">What our partners say.</h2>
-        <div class="testimonial-slider">
-          <p class="testimonial-text">"Customer feedback will appear here as verified testimonials become available."</p>
-          <p class="testimonial-author">— OCEAN STALLION INTERNATIONAL</p>
-        </div>
-      </div>
-    </section>
   </div>
 
   <!-- ==================== PRODUCTS PAGE ==================== -->
@@ -580,7 +570,7 @@ p { margin: 0 0 1em; }
             <div class="product-body">
               <h3>Other Grains & Pulses</h3>
               <p>We also facilitate the sourcing of other agricultural commodities based on specific buyer requirements and seasonal availability.</p>
-              <a onclick="navigate('contact')" class="btn btn-outline" style="margin-top:15px; font-size: 0.7rem; padding: 8px 15px; border-color:var(--navy-800); color:var(--navy-800);">Enquire Now</a>
+              <a href="#" onclick="navigate('contact'); return false;" class="btn btn-outline" style="margin-top:15px; font-size: 0.7rem; padding: 8px 15px; border-color:var(--navy-800); color:var(--navy-800);">Enquire Now</a>
             </div>
           </article>
 
@@ -656,51 +646,6 @@ p { margin: 0 0 1em; }
     </section>
   </div>
 
-  <!-- ==================== TRADE PROGRESS PAGE ==================== -->
-  <div id="page-trade" class="page-section">
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Trade Progress</span><hr class="rule" />
-        <h2>Verified aggregate data — nothing else.</h2>
-        <p style="color:var(--muted); margin-bottom: 40px;">We only show aggregate figures that we can substantiate through shipment documents. Buyer identities are never published.</p>
-        
-        <div class="stat-grid">
-          <div class="stat-card">
-            <div class="stat-label">Completed Export Shipments</div>
-            <div class="stat-val">Not yet available</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Total Quantity Exported (MT)</div>
-            <div class="stat-val">Not yet available</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Total Quantity Traded/Procured (MT)</div>
-            <div class="stat-val">Not yet available</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Products Supplied</div>
-            <div class="stat-val">Not yet available</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Reporting Period</div>
-            <div class="stat-val">Not yet available</div>
-          </div>
-        </div>
-
-        <div style="margin-top: 40px; background: var(--white); border: 1px solid var(--line); padding: 30px; border-radius: var(--radius-md);">
-          <h3>Product-wise Quantities</h3>
-          <ul style="list-style: none; padding: 0; display: grid; gap: 15px; margin-top: 20px;">
-            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:10px;"><span>Yellow Maize</span> <strong>Not yet available</strong></li>
-            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:10px;"><span>White Maize</span> <strong>Not yet available</strong></li>
-            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:10px;"><span>Wheat</span> <strong>Not yet available</strong></li>
-            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:10px;"><span>Pearl Millet (Bajra)</span> <strong>Not yet available</strong></li>
-            <li style="display:flex; justify-content:space-between;"><span>Groundnut</span> <strong>Not yet available</strong></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </div>
-
   <!-- ==================== CONTACT PAGE ==================== -->
   <div id="page-contact" class="page-section">
     <section class="section contact-section">
@@ -727,8 +672,7 @@ p { margin: 0 0 1em; }
         </div>
         
         <div>
-          <form class="quote-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="inquiryForm">
-            <input type="hidden" name="form-name" value="contact" />
+          <form class="quote-form" name="contact" method="POST" id="inquiryForm">
             <p style="display: none;">
               <label>Don't fill this out if you're human: <input name="bot-field" /></label>
             </p>
@@ -749,6 +693,7 @@ p { margin: 0 0 1em; }
             <div class="field full"><label>Message / Requirement</label><textarea name="message" rows="4" placeholder="Quantity, packaging, target port..." required></textarea></div>
             <button type="submit" class="btn btn-primary full" id="submitBtn">Send Inquiry</button>
             <div id="formStatus" style="grid-column: 1 / -1; text-align: center; display: none; margin-top: 10px;"></div>
+            <p class="full" style="font-size: 0.74rem; color: rgba(255,255,255,0.55); text-align: center; margin: 0;">Your details are used only to respond to your inquiry.</p>
           </form>
         </div>
       </div>
@@ -773,19 +718,18 @@ p { margin: 0 0 1em; }
     <div class="footer-col">
       <h5>Company</h5>
       <ul>
-        <li><a onclick="navigate('home')" style="cursor:pointer;">About Us</a></li>
-        <li><a onclick="navigate('certificates')" style="cursor:pointer;">Certificates</a></li>
-        <li><a onclick="navigate('trade')" style="cursor:pointer;">Trade Progress</a></li>
+        <li><a href="#" onclick="navigate('home'); return false;" style="cursor:pointer;">About Us</a></li>
+        <li><a href="#" onclick="navigate('certificates'); return false;" style="cursor:pointer;">Certificates</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>Commodities</h5>
       <ul>
-        <li><a onclick="navigate('products')" style="cursor:pointer;">Yellow Maize</a></li>
-        <li><a onclick="navigate('products')" style="cursor:pointer;">White Maize</a></li>
-        <li><a onclick="navigate('products')" style="cursor:pointer;">Wheat</a></li>
-        <li><a onclick="navigate('products')" style="cursor:pointer;">Groundnut</a></li>
-        <li><a onclick="navigate('products')" style="cursor:pointer;">Other Grains</a></li>
+        <li><a href="#" onclick="navigate('products'); return false;" style="cursor:pointer;">Yellow Maize</a></li>
+        <li><a href="#" onclick="navigate('products'); return false;" style="cursor:pointer;">White Maize</a></li>
+        <li><a href="#" onclick="navigate('products'); return false;" style="cursor:pointer;">Wheat</a></li>
+        <li><a href="#" onclick="navigate('products'); return false;" style="cursor:pointer;">Groundnut</a></li>
+        <li><a href="#" onclick="navigate('products'); return false;" style="cursor:pointer;">Other Grains</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -835,9 +779,6 @@ p { margin: 0 0 1em; }
     "https://images.unsplash.com/photo-1722413890417-67b8ce3f4005?auto=format&fit=crop&w=1920&q=75",
     "https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e?auto=format&fit=crop&w=1920&q=75",
     "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=75",
-    "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1920&q=75",
-    "https://images.unsplash.com/photo-1586528116311-ad8ed745d44c?auto=format&fit=crop&w=1920&q=75",
-    "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1920&q=75",
     "https://images.unsplash.com/photo-1599818817940-3e14c9a1a202?auto=format&fit=crop&w=1920&q=75"
   ];
   const wrap = document.getElementById("heroSlides");
@@ -885,8 +826,8 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
 
   const d = {
     access_key: "686f87c6-65af-4fff-ab5b-ab6794748047",
-  subject: "New Inquiry - " + fd.get('product') + " (" + fd.get('country') + ")",
-  from_name: "Ocean Stallion Website",
+    subject: "New Inquiry - " + fd.get('product') + " (" + fd.get('country') + ")",
+    from_name: "Ocean Stallion Website",
     name: fd.get('name'), email: fd.get('email'), country: fd.get('country'),
     product: fd.get('product'), message: fd.get('message')
   };
@@ -922,9 +863,11 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
     body: JSON.stringify(d)
   })
   .then(function (res) {
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    show('Thank you. We have received your inquiry.', '#4ade80', false);
-    form.reset();
+    return res.json().catch(function () { return {}; }).then(function (r) {
+      if (!res.ok || r.success === false) { throw new Error(r.message || ('HTTP ' + res.status)); }
+      show('Thank you. We have received your inquiry.', '#4ade80', false);
+      form.reset();
+    });
   })
   .catch(function () {
     show('Sorry, your inquiry could not be sent.', '#f87171', true);
