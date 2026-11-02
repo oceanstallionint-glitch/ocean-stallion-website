@@ -1,9 +1,0 @@
-{
-  "name": "ocean-stallion-international",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Ocean Stallion International website with a secure contact-form function",
-  "dependencies": {
-    "nodemailer": "^6.9.16"
-  }
-}
